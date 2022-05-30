@@ -1,0 +1,27 @@
+@mixin font($fname, $fstyle, $fweight, $furl, $format) {
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    src: url($furl) format($format);
+  }
+}
+
+@include font('Roboto', normal, 300, '../fonts/Roboto-Light.woff2', 'woff2');
+@include font('Roboto', normal, 400, '../fonts/Roboto-Regular.woff2', 'woff2');
+
+@include font('Rubik', normal, 300, '../fonts/Rubik-Light.woff2', 'woff2');
+@include font('Rubik', italic, 400, '../fonts/Rubik-Italic.woff2', 'woff2');
+@include font('Rubik', normal, 400, '../fonts/Rubik-Regular.woff2', 'woff2');
+@include font('Rubik', normal, 600, '../fonts/Rubik-SemiBold.woff2', 'woff2');
+@include font('Rubik', normal, 700, '../fonts/Rubik-Bold.woff2', 'woff2');
+
+
+@include font('Roboto', normal, 300, '../fonts/Roboto-Light.woff', 'woff');
+@include font('Roboto', normal, 400, '../fonts/Roboto-Regular.woff', 'woff');
+
+@include font('Rubik', normal, 300, '../fonts/Rubik-Light.woff', 'woff');
+@include font('Rubik', italic, 400, '../fonts/Rubik-Italic.woff', 'woff');
+@include font('Rubik', normal, 400, '../fonts/Rubik-Regular.woff', 'woff');
+@include font('Rubik', normal, 600, '../fonts/Rubik-SemiBold.woff', 'woff');
+@include font('Rubik', normal, 700, '../fonts/Rubik-Bold.woff', 'woff');

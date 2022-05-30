@@ -1,0 +1,38 @@
+$gray: #9092A6;
+$black: #1B1B1B;
+$white: #fff;
+$blue: #0094FF;
+$pink: #EB00FF;
+$circle-purple-dark: #6016FC;
+$circle-yellow: #FFB800;
+$circle-purple: #803AFF;
+$circle-pink: #DB00FF;
+$circle-blues: #5B00FF;
+$pale-blue: #4E6572;
+$light-blue: #56CCF2;
+$light-blue-2: #4BB4FF;
+$purple-dark: #752BFF;
+$purple-pale: #AC81FF;
+$pink-2: #F402D2;
+$gray-pale: #D7C5FF;
+$gray-light: #C8C8C8;
+$background: linear-gradient(90deg, $black 0%, rgba(27, 27, 27, 0) 100%);
+$background-text: linear-gradient(0deg, #EAEAFA, #EAEAFA), linear-gradient(268.78deg, #8844FF 2.63%, #742AFF 103.34%);
+$purple: linear-gradient(86.58deg, #7329FF 2.95%, #8C49FF 95.21%);
+$blue-gradient: linear-gradient(86.58deg, #297FFF 2.95%, #49A8FF 95.21%);
+$background-image: linear-gradient(200deg, #7329FF, rgba(142, 97, 255, 0) 34%), radial-gradient(circle farthest-corner at 0% -100%, #8C49FF 20%, rgba(205, 219, 248, 0) 51%), linear-gradient(180deg, #6c52ee, #6c52ee);
+$box-shadow: .5rem .5rem 3.0rem rgba(0, 0, 0, 0.25);
+$circle-pink-gradient: linear-gradient(180deg, #FF81A6 0%, #FC165B 100%);
+$circle-green: linear-gradient(180deg, #66FFA3 0%, #009C3E 100%);
+
+// media
+$large-desktop: 1600px;
+$small-desktop: 1440px;
+
+$large-tablet: 1024px;
+$medium-tablet: 998px;
+$small-tablet: 778px;
+
+$large-mobile: 580px;
+$medium-mobile: 428px;
+$small-mobile: 360px;

@@ -1,0 +1,382 @@
+html {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[class] {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+input,
+button {
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:active, &:focus, &:hover {
+    color: inherit;
+  }
+}
+
+html {
+  height: 100%;
+  background: $black;
+  box-sizing: border-box;
+  font-size: 100vw  / (1920/10);
+  overflow-y: auto;
+}
+
+
+body {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  color: $white;
+  background: $background;
+  font-size: 2rem;
+  line-height: 3rem;
+  background-repeat: repeat;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+
+  &.overflow {
+    overflow: hidden;
+  }
+}
+
+.container {
+  max-width: 126rem;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  margin: 0 0 2rem 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex: 0 0 auto;
+}
+
+.object-fit {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.background-text {
+  background: $background-text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+button, .link {
+  border-radius: 9.9rem;
+  border: none;
+  padding: 1.8rem 3.2rem;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: $white;
+  width: fit-content;
+  background-color: $white;
+  background-image: $background-image;
+  transition: all 250ms ease, filter 2000ms cubic-bezier(.165, .84, .44, 1), box-shadow 200ms ease, -webkit-filter 2000ms cubic-bezier(.165, .84, .44, 1);
+  box-shadow: 1px 1px 3px 1px rgb(0 0 0 / 19%), 0 5px 53px 0 rgb(0 29 255 / 73%);
+  height: fit-content;
+
+  &:hover {
+    border-width: 1px;
+    border-color: hsla(0, 0%, 100%, 0.26);
+    box-shadow: 5px 0 30px 0 rgb(0 0 0 / 10%);
+    -webkit-filter: hue-rotate(83deg);
+    filter: hue-rotate(83deg);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+.video {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 56.25%;
+
+  &__media {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__overlay {
+    position: absolute;
+    z-index: 9;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 15rem;
+    background-image: linear-gradient(0deg, $black 50%, transparent);
+
+    &_top {
+      display: none;
+    }
+
+    &_bottom {
+      bottom: 0;
+    }
+    @media only screen and (max-width: $medium-tablet) {
+      &_top {
+        display: block;
+        top: -1px;
+        transform: rotate(180deg);
+      }
+
+      &_bottom {
+        bottom: -1px;
+      }
+    }
+  }
+
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 6.4rem;
+  line-height: 8.4rem;
+  letter-spacing: -1.56px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 5.0rem;
+  line-height: 5.7rem;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 4.0rem;
+  line-height: 5.5rem;
+}
+
+.text {
+  color: $gray;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(52, 58, 66, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+  box-shadow: $box-shadow;
+  backdrop-filter: blur(4px);
+  border-radius: 2rem;
+  position: relative;
+  --b: 1.5px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: var(--c, linear-gradient(0deg, rgba(117, 44, 255, 0.4) -1.02%, rgba(69, 14, 174, 0.0) 100%));
+    padding: var(--b);
+    border-radius: 2rem;
+    border-top: 0;
+    -webkit-mask: linear-gradient($white 0 0) content-box,
+    linear-gradient($white 0 0);
+    mask: linear-gradient($white 0 0) content-box,
+    linear-gradient($white 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}
+
+.slider {
+  &-btns {
+    display: none;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 9;
+  }
+
+  &-btn {
+    width: 4.4rem;
+    height: 4.4rem;
+    border: 0.5px solid rgba(255, 255, 255, 0.6);
+    border-radius: 1.0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &_next {
+      margin-left: 1rem;
+
+      .slider-btn__icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    &__icon {
+      width: .7rem;
+      height: 1.4rem;
+    }
+  }
+}
+
+
+@media only screen and (max-width: $large-desktop) {
+  html {
+    font-size: 100vw / (1600/10);
+  }
+}
+
+@media only screen and (max-width: $small-desktop) {
+  html {
+    font-size: 100vw / (1440/10);
+  }
+}
+
+@media only screen and (max-width: $medium-tablet) {
+  html {
+    font-size: 100vw / (998/10);
+  }
+  body {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+  }
+  .container {
+    padding: 0 10rem;
+  }
+  h1 {
+    font-weight: 600;
+    font-size: 3.2rem;
+    line-height: 3.8rem;
+    letter-spacing: -1.56px;
+  }
+  .slider {
+    &-btns {
+      display: flex;
+    }
+  }
+
+}
+
+@media only screen and (max-width: $small-tablet) {
+  html {
+    font-size: 100vw / (800/10);
+  }
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+@media only screen and (max-width: $large-mobile) {
+  html {
+    font-size: 100vw / (580/10);
+  }
+  .container {
+    padding: 0 2.7rem;
+  }
+  button, .link {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+  h2 {
+    font-size: 3.2rem;
+    line-height: 3.8rem;
+    letter-spacing: -1.56316px;
+  }
+}
+
+@media only screen and (max-width: $medium-mobile) {
+  html {
+    font-size: 100vw / (428/10);
+  }
+}

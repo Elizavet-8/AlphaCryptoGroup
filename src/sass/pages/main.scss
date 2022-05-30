@@ -1,0 +1,1466 @@
+.main {
+  min-height: 100vh;
+  height: fit-content;
+  overflow: hidden;
+  position: relative;
+  background: url("../video/cover.png") center no-repeat;
+  background-size: cover;
+
+  &__btn {
+    display: none;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #1b1b1bb3;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    padding: 17.4rem 0 5rem;
+  }
+
+  &__title {
+    max-width: 72rem;
+    margin: 3rem 0 4rem;
+  }
+
+  &__caption {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    font-style: italic;
+    padding: 1.2rem 2.1rem 1.1rem 2.2rem;
+    width: fit-content;
+  }
+
+  &__text {
+    color: $gray;
+    max-width: 75rem;
+  }
+}
+
+.offers {
+  padding: 15.5rem 0 22.2rem;
+  position: relative;
+
+  &__block {
+    margin-bottom: 19.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &_border {
+      background: $white;
+
+    }
+  }
+
+  &__texts {
+    width: 62rem;
+    margin-left: auto;
+  }
+
+  &__text {
+    max-width: 52rem;
+    margin-top: 4rem;
+  }
+
+  &__img {
+    width: 20.5rem;
+    height: 21.5rem;
+    margin: 0 auto;
+  }
+
+  &__icon {
+    width: 8rem;
+    height: 8rem;
+    position: relative;
+  }
+
+  &__body {
+    position: relative;
+  }
+
+  &__circle {
+    position: absolute;
+    filter: blur(10px);
+    transform: rotate(-34.72deg);
+    border-radius: 50%;
+
+    &_purple {
+      background: $circle-purple-dark;
+      animation: blur 1.5s infinite linear;
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &_pink {
+      background: $circle-pink-gradient;
+      animation: blur 2s infinite linear;
+      width: 4.7rem;
+      height: 4.7rem;
+    }
+
+    &_green {
+      width: 5.5rem;
+      height: 5.5rem;
+      background: $circle-green;
+      animation: blur 2.5s infinite linear;
+    }
+
+    &-blurred {
+      filter: blur(18px);
+      height: 6rem;
+      width: 7.9rem;
+      position: absolute;
+      z-index: -1;
+      animation: spin-8 4s infinite linear;
+
+      &_blue {
+        background: $blue;
+        animation: spin-8 2.5s infinite linear;
+      }
+
+      &_yellow {
+        background: $circle-yellow;
+        animation: spin-8 3s infinite linear;
+      }
+
+      &_purple {
+        background: $circle-purple;
+      }
+
+      &_pink {
+        background: $circle-pink;
+        animation: spin-8 3.5s infinite linear;
+      }
+
+      &_blues {
+        background: $circle-blues;
+        animation: spin-8 4.5s infinite linear;
+      }
+    }
+  }
+
+  &__cards {
+    position: relative;
+    margin-left: 10rem;
+  }
+
+  &__card {
+    &_small {
+      width: 16.8rem;
+      height: 17.0rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      z-index: 10;
+    }
+
+    &_big {
+      padding: 4.2rem 3.8rem 4rem;
+      width: 28.5rem;
+    }
+
+    &_long {
+      width: 19.8rem;
+      height: 7.4rem;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+
+  &-knowledge {
+    &__circle {
+      &_pink {
+        top: -2.3rem;
+        left: -8rem;
+      }
+
+      &_purple {
+        left: -6.4rem;
+        bottom: 2rem;
+      }
+
+      &_green {
+        top: 17rem;
+        right: -9.3rem;
+      }
+    }
+
+    &__subtitle {
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: 2.1rem;
+      margin: 3rem 0 3.5rem;
+    }
+
+    &__item {
+      margin-bottom: 1.3rem;
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+      display: grid;
+      grid-template-columns: 1fr minmax(6.8rem, auto);
+      align-items: center;
+      position: relative;
+      z-index: 2;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__text {
+      padding-left: 2.2rem;
+    }
+
+    &__line {
+      border-radius: 99.9rem;
+      height: .5rem;
+      width: 100%;
+
+      &_purple {
+        background: $purple;
+        max-width: 11.2rem;
+      }
+
+      &_pink {
+        background: $blue-gradient;
+      }
+    }
+
+    &-bitcoin {
+      top: -8.7rem;
+      right: -7.4rem;
+
+      &__circle {
+        &-blurred {
+          &_blue {
+            left: -.9rem;
+            top: .7rem;
+          }
+
+          &_yellow {
+            top: 2px;
+            left: 1px;
+          }
+
+          &_purple {
+            right: -.9rem;
+            top: .7rem;
+          }
+        }
+      }
+
+      &__block {
+        border: .5rem solid $white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &__icon {
+        height: 4.5rem;
+        width: 2.9rem;
+      }
+    }
+
+    &-logo {
+      top: 10.9rem;
+      left: -9.9rem;
+
+      &__circle {
+        &-blurred {
+          &_blue {
+            left: -.9rem;
+            top: -1rem;
+          }
+
+          &_pink {
+            top: 0;
+            left: 1px;
+          }
+
+          &_blues {
+            border-top: 1rem;
+            right: -.7rem;
+          }
+        }
+      }
+    }
+
+    &-book {
+      bottom: -4.8rem;
+      right: -13.3rem;
+
+      &__icon {
+        height: 6.6rem;
+        width: 7.3rem;
+      }
+
+      &__circle {
+        &-blurred {
+          &_blue {
+            left: -1.4rem;
+            top: .6rem;
+          }
+
+          &_yellow {
+            top: 3px;
+            left: 4px;
+          }
+
+          &_purple {
+            right: -1.1rem;
+            top: .6rem;
+          }
+        }
+      }
+    }
+  }
+
+  &-market {
+    &__circle {
+      &_pink {
+        top: 2.5rem;
+        left: -7.5rem;
+      }
+
+      &_purple {
+        left: 2.6rem;
+        bottom: -5rem;
+      }
+
+      &_green {
+        top: 25rem;
+        right: -3.5rem;
+      }
+    }
+
+    &__list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.4rem;
+      line-height: 2.1rem;
+      margin: 4.1rem 0 3.5rem;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+
+      &:after {
+        content: '';
+        height: 1.6rem;
+        width: 1px;
+        background: $pale-blue;
+        margin: 0 1rem;
+      }
+
+      &:first-child {
+        color: $light-blue;
+      }
+
+      &:last-child {
+        &:after {
+          content: none;
+        }
+      }
+    }
+
+    &__card {
+      z-index: 1;
+
+      &_big {
+        z-index: 2;
+        position: relative;
+        background: linear-gradient(180deg, rgba(52, 58, 66, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%), rgba(54, 52, 62, 0.6);
+      }
+    }
+
+    &__subtitle {
+      font-weight: 600;
+      font-size: 2.4rem;
+      line-height: 2.8rem;
+      color: $light-blue
+    }
+
+    &-telegram {
+      top: 4.3rem;
+      right: -9.6rem;
+
+      &__icon {
+        height: 6rem;
+        width: 7rem;
+      }
+
+      &__circle {
+        &-blurred {
+          &_blue {
+            top: 0;
+            left: -1.4rem;
+          }
+
+          &_yellow {
+            top: 0.9rem;
+            left: 4px;
+          }
+
+          &_purple {
+            top: 1px;
+            left: .6rem;
+          }
+        }
+      }
+    }
+
+    &-crystal {
+      top: 15.8rem;
+      left: -8.5rem;
+
+      &__icon {
+        height: 8.6rem;
+        width: 5.3rem;
+      }
+
+      &__circle {
+        &-blurred {
+          &_blue {
+            top: 1.7rem;
+            left: -2.2rem;
+          }
+
+          &_yellow {
+            top: .7rem;
+            left: -1.2rem;
+          }
+
+          &_purple {
+            top: 1.7rem;
+            right: -2.3rem;
+          }
+        }
+      }
+    }
+
+    &-graph {
+      bottom: -3rem;
+      right: -10.1rem;
+
+      &__icon {
+        width: 100%;
+      }
+
+      &__circle {
+        &-blurred {
+          &_blue {
+            left: 5.4rem;
+            top: -.6rem;
+          }
+
+          &_pink {
+            top: 3px;
+            left: 6.4rem;
+          }
+
+          &_blues {
+            border-top: .6rem;
+            left: 7.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.more {
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 40rem;
+    margin: 0 auto;
+    box-shadow: $box-shadow;
+    border-radius: 2rem;
+
+    &_mobile {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin: 6rem 0 3rem;
+    letter-spacing: -1.56316px;
+  }
+
+  &__text {
+    letter-spacing: -0.625263px;
+    max-width: 99.6rem;
+    margin: auto;
+  }
+}
+
+.roadmap {
+  padding: 17rem 0 34.8rem;
+
+  &__slider {
+    margin-top: 8rem;
+    height: fit-content;
+  }
+
+  &__card {
+    border-radius: 2rem;
+    padding: 6rem 2rem 3.4rem;
+    height: 100%;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 4.8rem;
+    line-height: 5.7rem;
+    letter-spacing: -0.750316px;
+    margin: 0 auto 4rem;
+    position: relative;
+    width: fit-content;
+  }
+
+  &__item {
+    margin-bottom: 3.4rem;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    letter-spacing: -0.625263px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__date {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-right: 1px;
+    color: $white;
+  }
+
+  &__circle {
+    filter: blur(20px);
+    position: absolute;
+    z-index: -1;
+
+    &_blue {
+      height: 6.7rem;
+      width: 3.8rem;
+      top: .9rem;
+      left: -3.8rem;
+      background: $blue;
+      animation: spin 2.5s infinite linear;
+    }
+
+    &_purple {
+      height: 3.8rem;
+      width: 6.7rem;
+      top: 3rem;
+      left: -.6rem;
+      background: $purple;
+      animation: spin 3s infinite linear;
+    }
+
+    &_pink {
+      height: 3.8rem;
+      width: 3.8rem;
+      top: -2.9rem;
+      left: 2.2rem;
+      background: $pink;
+      animation: spin 4s infinite linear;
+    }
+  }
+
+}
+
+.starter {
+
+  &__row {
+    position: relative;
+  }
+
+  &__caption {
+    margin: 1rem 0 3rem;
+  }
+
+  &__texts {
+    max-width: 48.8rem;
+    position: relative;
+    z-index: 5;
+  }
+
+  &__btn {
+    margin-top: 4rem;
+  }
+
+  &-card {
+    padding: 1.4rem 1.4rem 0;
+    width: 28.5rem;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 1.0rem;
+    line-height: 1.2rem;
+    position: absolute;
+    height: fit-content;
+
+    &:nth-child(1) {
+      top: -10.3rem;
+      right: 27.5rem;
+      z-index: 2;
+    }
+
+    &:nth-child(2) {
+      opacity: 0.5;
+      z-index: 1;
+      top: -22.4rem;
+      right: 2.9rem;
+    }
+
+    &:nth-child(3) {
+      z-index: 1;
+      top: 2.3rem;
+      right: -14.7rem;
+      z-index: 1;
+    }
+
+    &__img {
+      width: 100%;
+      height: 13.8rem;
+      border-radius: 1.5rem;
+      margin-bottom: 1.4rem;
+    }
+
+    &__item {
+      margin-bottom: 1.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__hashtag {
+      color: $light-blue-2;
+      margin: .9rem 0 1rem;
+      display: block;
+
+      &:hover, &:focus, &:active {
+        color: $light-blue-2;
+      }
+    }
+
+    &__footer {
+      border-top: 1px solid $purple-dark;
+      margin: 0 -1.4rem;
+      padding: .9rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__texts {
+      display: flex;
+      align-items: center;
+    }
+
+    &__avatar {
+      width: 1.9rem;
+      height: 1.9rem;
+      border-radius: 50%;
+      position: relative;
+      margin-left: -.5rem;
+      overflow: hidden;
+
+      &:nth-child(1) {
+        z-index: 3;
+        margin-left: 0;
+      }
+
+      &:nth-child(2), &:nth-child(3) {
+        z-index: 2;
+      }
+
+      &:nth-child(3) {
+        z-index: 1;
+      }
+    }
+
+    &__text {
+      color: $purple-pale;
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      margin-left: .8rem;
+    }
+
+    &__svg {
+      width: .7rem;
+      height: 1rem;
+      margin-right: 1.25px;
+    }
+
+    &__link {
+      &:hover, &:focus, &:active {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.advantages {
+  padding: 39.1rem 0 14rem;
+  position: relative;
+
+  &__overlay {
+    position: absolute;
+    bottom: 0;
+    width: 20rem;
+    height: 60%;
+    z-index: 9;
+    background-image: linear-gradient(90deg, #1b1b1bf0 50%, transparent);
+
+    &_left {
+      left: 0;
+    }
+
+    &_right {
+      right: 0;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__row {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  &__title {
+    max-width: 88rem;
+    margin-right: 2rem;
+
+    &_pink {
+      color: $pink-2;
+    }
+  }
+
+  &__caption {
+    letter-spacing: -0.625263px;
+    margin: 3rem 0 8.7rem;
+  }
+
+  &__svg {
+    width: 2.1rem;
+    height: 3.4rem;
+    margin-left: 1.2rem;
+    display: inherit;
+  }
+
+  &__slider {
+    overflow: inherit;
+  }
+
+  &__card {
+    padding: 5rem 3rem 8.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 38.4rem;
+    box-sizing: border-box;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 2.1rem;
+    line-height: 3.6rem;
+    letter-spacing: -0.750316px;
+    margin-bottom: 1rem;
+  }
+
+  &__footer {
+    position: relative;
+  }
+
+  &__icon {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  &__circle {
+    filter: blur(20px);
+    position: absolute;
+    z-index: -1;
+    height: 6.7rem;
+    width: 3.8rem;
+
+    &_blue {
+      top: .5rem;
+      left: -.5rem;
+      background: $blue;
+      animation: spin 2.5s infinite linear;
+    }
+
+    &_purple {
+      top: 5rem;
+      left: .9rem;
+      background: $purple;
+      animation: spin 3s infinite linear;
+    }
+
+    &_pink {
+      top: 1rem;
+      left: 3.8rem;
+      background: $pink;
+      animation: spin 4s infinite linear;
+    }
+  }
+}
+
+.subscriptions {
+  padding-bottom: 6rem;
+  position: relative;
+
+  &__circle {
+    position: absolute;
+    bottom: 0;
+    left: 13.8rem;
+    animation: spin 3s infinite linear;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background: $circle-purple-dark;
+    filter: blur(25px);
+    transform: rotate(-34.72deg);
+    z-index: 1;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    margin: 6rem -1rem;
+  }
+
+  &__column {
+    padding: 0 1rem;
+  }
+
+  &__card {
+    height: auto;
+    min-height: 56.3rem;
+    padding: 4rem 2rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  &__head {
+    background: linear-gradient(180deg, rgba(52, 58, 66, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%), rgba(139, 71, 255, 0.2);
+    padding: 1.1rem 2rem;
+    width: fit-content;
+    margin: 0 auto 8rem;
+    min-width: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 6.0rem;
+    line-height: 5.6rem;
+    letter-spacing: -1.03448px;
+  }
+
+  &__list {
+    margin: 4rem 0;
+    color: $gray-pale;
+  }
+
+  &__item {
+    margin-bottom: 2.6rem;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    letter-spacing: -0.7px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__btn {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 30.7rem;
+  }
+
+  &-pro {
+    &__card {
+      background: linear-gradient(180deg, rgba(52, 58, 66, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%),
+      linear-gradient(339.4deg, rgba(117, 44, 255, 0.4) -1.02%, rgba(69, 14, 174, 0.12) 100%);
+    }
+
+    &__head {
+      font-weight: 600;
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+      letter-spacing: -0.562737px;
+      color: $pink-2;
+    }
+
+    &__svg {
+      margin-left: .6rem;
+      width: 1.3rem;
+      height: 2.1rem;
+    }
+
+    &__list {
+      margin-bottom: 4.8rem;
+    }
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    color: $gray-light;
+  }
+}
+
+@media only screen and (max-width: $medium-tablet) {
+  .main {
+    height: fit-content;
+    background: transparent;
+    display: flex;
+    flex-direction: column-reverse;
+
+    &__content {
+      border-top: 1px solid $white;
+      margin-top: 5.8rem;
+      padding: 5rem 0 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    &__btn {
+      display: block;
+      margin: 6rem auto 0;
+    }
+
+    &__title {
+      max-width: 72rem;
+      margin: 2rem 0;
+    }
+
+    &__caption {
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      padding: 1rem 1.2rem 1rem 1.4rem;
+      margin: 0 auto;
+    }
+  }
+
+  .offers {
+    padding-bottom: 8rem;
+    padding-top: 10rem;
+
+    &__block {
+      margin-bottom: 13.3rem;
+      flex-direction: column;
+    }
+
+    &__cards {
+      margin: 0 0 6.5rem 0;
+    }
+
+    &__texts {
+      margin: 0 auto;
+    }
+  }
+
+  .more {
+    &__img {
+      display: none;
+      border-radius: 0;
+
+      &_mobile {
+        display: block;
+        object-fit: contain;
+      }
+    }
+
+    &__container {
+      padding: 0;
+    }
+  }
+
+  .roadmap {
+    padding: 10rem 0;
+
+    &__card {
+      max-height: 31rem
+    }
+  }
+
+  .starter {
+    &__caption {
+      margin: 1.4rem 0 2rem;
+    }
+
+    &__texts {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    &__btn {
+      margin: 3rem auto 0;
+    }
+
+    &-cards {
+      display: grid;
+      grid-template-columns: 24.5rem 19.8rem 21.2rem;
+      justify-content: center;
+      width: fit-content;
+      margin: 0 1.2rem;
+    }
+
+    &-card {
+      position: relative;
+
+      &:nth-child(n) {
+        top: 0;
+        right: 0;
+      }
+
+      &:nth-child(1) {
+        margin-top: 6.5rem;
+      }
+
+      &:nth-child(2) {
+        margin-top: -5.3rem;
+      }
+
+      &:nth-child(3) {
+        margin-top: 18.5rem;
+      }
+    }
+  }
+
+  .advantages {
+    padding: 11rem 0 3rem;
+
+    &__overlay {
+      width: 10rem;
+    }
+
+    &__row {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    &__caption {
+      margin: 2rem 0 3rem;
+    }
+
+    &__btn {
+      margin-bottom: 6rem;
+    }
+
+    &__title {
+      max-width: 66rem;
+      margin-right: 0;
+    }
+
+    &__card {
+      padding: 5rem 9rem 8.6rem 6rem;
+    }
+
+    &__circle {
+      &_purple {
+        left: 2rem;
+      }
+
+      &_pink {
+        left: 5.8rem;
+      }
+    }
+  }
+
+  .subscriptions {
+    padding-bottom: 7.4rem;
+    &__circle {
+      left: 4.8rem;
+      width: 4.8rem;
+      height: 4.8rem;
+      filter: blur(25px);
+    }
+    &__grid {
+      grid-template-columns: 1fr;
+      justify-content: center;
+      margin: 0 0 3.7rem;
+    }
+
+    &__column {
+      padding: 0;
+      margin: 2rem auto 0;
+      max-width: 45rem;
+      width: 100%;
+
+      &:nth-child(2) {
+        grid-row-end: 4;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $small-tablet) {
+  .advantages__overlay {
+    width: 5rem;
+  }
+
+  .starter {
+    &-cards {
+      grid-template-columns: 11.5rem 8.8rem 16.5rem;
+      margin: 0 auto;
+    }
+
+    &-card {
+      padding: .6rem .6rem 0;
+      width: 14.1rem;
+      font-size: 4.96296px;
+      line-height: 6px;
+      border-radius: 1rem;
+
+      &:before {
+        border-radius: 1rem;
+      }
+
+      &:nth-child(1) {
+        margin-top: 3rem;
+      }
+
+      &:nth-child(2) {
+        margin-top: -2.3rem;
+      }
+
+      &:nth-child(3) {
+        margin-top: 9.5rem;
+      }
+
+      &__img {
+        height: 7.4rem;
+        border-radius: .7rem;
+        margin-bottom: .7rem;
+      }
+
+      &__item {
+        margin-bottom: .7rem;
+      }
+
+      &__hashtag {
+        margin: 3px 0 5px;
+      }
+
+      &__footer {
+        margin: 0 -.6rem;
+        padding: 4px .6rem;
+      }
+
+      &__avatar {
+        width: 1rem;
+        height: 1rem;
+        margin-left: -.5rem;
+      }
+
+      &__text {
+        font-size: 5.95555px;
+        line-height: 7px;
+        margin-left: 3px;
+      }
+
+      &__svg {
+        width: 3px;
+        height: 9px;
+        margin-right: 1.5px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $large-mobile) {
+  .offers {
+    &__text {
+      margin-top: 1.4rem;
+    }
+
+    &__img {
+      width: 12.3rem;
+      height: 12.9rem;
+    }
+
+    &__icon {
+      width: 4.2rem;
+      height: 4.2rem;
+    }
+
+    &__card {
+      &_small {
+        width: 10.1rem;
+        height: 10.2rem;
+        border-radius: 1.2rem;
+
+        &:before {
+          border-radius: 1.2rem;
+        }
+      }
+
+      &_big {
+        padding: 2.5rem 2.2rem 2.7rem;
+        width: 17.1rem;
+        border-radius: 1.2rem;
+
+        &:before {
+          border-radius: 1.2rem;
+        }
+      }
+
+      &_long {
+        width: 11.9rem;
+        height: 4.5rem;
+        border-radius: 1.2rem;
+
+        &:before {
+          border-radius: 1.2rem;
+        }
+      }
+    }
+
+    &__circle {
+      &_purple {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+
+      &_pink {
+        width: 2.8rem;
+        height: 2.8rem;
+      }
+
+      &_green {
+        width: 3.3rem;
+        height: 3.3rem;
+      }
+
+      &-blurred {
+        filter: blur(10px);
+        height: 3.6rem;
+        width: 4.7rem;
+      }
+    }
+
+    &-knowledge {
+      &__circle {
+        &_pink {
+          top: -1rem;
+          left: -5.5rem;
+        }
+
+        &_purple {
+          left: -4.8rem;
+          bottom: 0.8rem;
+        }
+
+        &_green {
+          top: 9rem;
+          right: -11rem;
+        }
+      }
+
+      &__subtitle {
+        font-size: 1rem;
+        line-height: 1.3rem;
+        margin: 1.8rem 0 1.7rem;
+      }
+
+      &__item {
+        margin-bottom: 1.3rem;
+        font-size: .7rem;
+        line-height: 1.0rem;
+        grid-template-columns: 1fr minmax(4.1rem, auto);
+      }
+
+      &__text {
+        padding-left: 1.3rem;
+      }
+
+      &__line {
+        border-radius: 60rem;
+        height: 3px;
+
+        &_purple {
+          max-width: 6.7rem;
+        }
+      }
+
+      &-bitcoin {
+        top: -5.2rem;
+        right: -4.5rem;
+
+        &__block {
+          border: 4px solid $white;
+        }
+
+        &__icon {
+          height: 2.7rem;
+          width: 1.7rem;
+        }
+      }
+
+      &-logo {
+        top: 6.5rem;
+        left: -6rem;
+      }
+
+      &-book {
+        bottom: -3.1rem;
+        right: -8rem;
+
+        &__icon {
+          height: 4rem;
+          width: 4.4rem;
+
+        }
+      }
+    }
+
+    &-market {
+      &__circle {
+        &_pink {
+          top: 1rem;
+          left: -4.5rem;
+        }
+
+        &_purple {
+          left: 1.6rem;
+          bottom: -2.5rem;
+        }
+
+        &_green {
+          top: 14rem;
+          right: -2.5rem;
+        }
+      }
+
+      &__list {
+        font-size: .8rem;
+        line-height: 1.3rem;
+        margin: 2.4rem 0 2rem;
+      }
+
+      &__item {
+        &:after {
+          height: .9rem;
+          margin: 0 .5rem;
+        }
+      }
+
+      &__subtitle {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+      }
+
+      &-telegram {
+        top: 2.5rem;
+        right: -5.8rem;
+
+        &__icon {
+          height: 3.6rem;
+          width: 4.2rem;
+        }
+      }
+
+      &-crystal {
+        top: 9.5rem;
+        left: -5.1rem;
+
+        &__icon {
+          height: 5.2rem;
+          width: 3.2rem;
+        }
+      }
+
+      &-graph {
+        bottom: -1.8rem;
+        right: -6.1rem;
+      }
+    }
+  }
+
+  .more__img_mobile {
+    height: 29.9rem;
+    object-fit: fill;
+  }
+
+  .roadmap {
+    &__slider {
+      overflow: inherit;
+    }
+
+    &__slide {
+      width: 28.5rem !important;
+    }
+  }
+
+  .advantages {
+    &__slider, &__btns {
+      padding: 0 1.2rem;
+    }
+
+    &__slide {
+      width: 28.5rem !important;
+    }
+
+    &__card {
+      padding: 5rem 3rem 8.6rem;
+    }
+  }
+
+  .subscriptions {
+    &__card {
+      min-height: 0;
+    }
+  }
+}
