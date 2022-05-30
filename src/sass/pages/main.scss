@@ -75,7 +75,7 @@
   }
 
   &__texts {
-    width: 62rem;
+    max-width: 62rem;
     margin-left: auto;
   }
 
@@ -966,7 +966,7 @@
     &__content {
       border-top: 1px solid $white;
       margin-top: 5.8rem;
-      padding: 5rem 0 0;
+      padding: 5rem 0 3rem;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -1017,7 +1017,6 @@
 
       &_mobile {
         display: block;
-        object-fit: contain;
       }
     }
 
@@ -1121,12 +1120,14 @@
 
   .subscriptions {
     padding-bottom: 7.4rem;
+
     &__circle {
       left: 4.8rem;
       width: 4.8rem;
       height: 4.8rem;
       filter: blur(25px);
     }
+
     &__grid {
       grid-template-columns: 1fr;
       justify-content: center;
@@ -1431,16 +1432,13 @@
 
   .more__img_mobile {
     height: 29.9rem;
-    object-fit: fill;
   }
 
   .roadmap {
     &__slider {
       overflow: inherit;
-    }
-
-    &__slide {
-      width: 28.5rem !important;
+      width: 28.5rem;
+      margin-left: 0;
     }
   }
 
@@ -1449,12 +1447,16 @@
       padding: 0 1.2rem;
     }
 
-    &__slide {
-      width: 28.5rem !important;
+    &__slider {
+      width: 28.5rem;
+      margin-left: 0;
     }
 
     &__card {
       padding: 5rem 3rem 8.6rem;
+    }
+    &__overlay {
+      display: none;
     }
   }
 

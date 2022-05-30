@@ -214,6 +214,7 @@ button, .link {
       bottom: 0;
     }
     @media only screen and (max-width: $medium-tablet) {
+      height: 1.5rem;
       &_top {
         display: block;
         top: -1px;
