@@ -3,11 +3,24 @@
   height: fit-content;
   overflow: hidden;
   position: relative;
-  background: url("../video/cover.png") center no-repeat;
   background-size: cover;
+  padding: 31.4rem 0 31.1rem;
 
   &__btn {
     display: none;
+  }
+
+  &__video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__media {
+    height: 100%;
+    object-fit: cover;
   }
 
   &:after {
@@ -25,13 +38,12 @@
   }
 
   &__content {
-    position: absolute;
+    position: relative;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: 3;
-    padding: 17.4rem 0 5rem;
   }
 
   &__title {
@@ -50,6 +62,33 @@
   &__text {
     color: $gray;
     max-width: 75rem;
+  }
+}
+
+.image-grid {
+  font-size: 0;
+  line-height: 0em;
+  padding: 200px 0 1000px;
+
+  .img-wrapper {
+    background: lightgray;
+    position: relative;
+    display: inline-block;
+    width: 23.33%;
+    height: 400px;
+    margin: 0 5% 50px;
+    overflow: hidden;
+    //transition: transform 200ms;
+
+    .img {
+      position: absolute;
+      top: -10%;
+      left: 0;
+      width: 100%;
+      height: 130%;
+      background-position: center;
+      background-size: cover;
+    }
   }
 }
 
@@ -108,14 +147,14 @@
 
     &_purple {
       background: $circle-purple-dark;
-      animation: blur 1.5s infinite linear;
+      animation: spin-2 3s infinite linear;
       width: 3rem;
       height: 3rem;
     }
 
     &_pink {
       background: $circle-pink-gradient;
-      animation: blur 2s infinite linear;
+      animation: spin-2 4s infinite linear;
       width: 4.7rem;
       height: 4.7rem;
     }
@@ -124,7 +163,7 @@
       width: 5.5rem;
       height: 5.5rem;
       background: $circle-green;
-      animation: blur 2.5s infinite linear;
+      animation: spin-2 5s infinite linear;
     }
 
     &-blurred {
@@ -164,6 +203,12 @@
   &__cards {
     position: relative;
     margin-left: 10rem;
+
+    &.active {
+      .offers__card_small, .offers__card_long {
+        animation: bloom .7s ease-out;
+      }
+    }
   }
 
   &__card {
@@ -515,6 +560,16 @@
   &__title {
     margin: 6rem 0 3rem;
     letter-spacing: -1.56316px;
+
+    .char {
+      display: inline-block;
+    }
+
+    &.active {
+      .char {
+        animation: ani2 .8s forwards;
+      }
+    }
   }
 
   &__text {
@@ -532,10 +587,75 @@
     height: fit-content;
   }
 
+  &__slide {
+    &:nth-child(2) {
+      .roadmap__circle {
+        &_blue {
+          top: 0rem;
+          left: 1.4rem;
+        }
+
+        &_purple {
+          top: -1rem;
+          left: -4.8rem;
+        }
+
+        &_pink {
+          top: -0.1rem;
+          left: 4.8rem;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      .roadmap__circle {
+        &_blue {
+          top: 0.1rem;
+          left: 1.4rem;
+        }
+
+        &_purple {
+          top: .9rem;
+          left: 3.8rem;
+        }
+
+        &_pink {
+          top: -1.9rem;
+          left: -2.2rem;
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      .roadmap__circle {
+        &_blue {
+          top: 1rem;
+          left: -.8rem;
+        }
+
+        &_purple {
+          top: -2.5rem;
+          left: -3.8rem;
+        }
+
+        &_pink {
+          top: .9rem;
+          left: 4.2rem;
+        }
+      }
+    }
+  }
+
   &__card {
     border-radius: 2rem;
     padding: 6rem 2rem 3.4rem;
     height: 100%;
+
+    &:hover, &:active, &:focus {
+      &:before {
+        animation: gradient 1s infinite linear;
+      }
+    }
   }
 
   &__subtitle {
@@ -621,6 +741,27 @@
     margin-top: 4rem;
   }
 
+  &-cards {
+    &.active {
+      .starter-card {
+        opacity: 1;
+
+        &:nth-child(1) {
+          animation: bloom 0.6s ease-out;
+        }
+
+        &:nth-child(2) {
+          opacity: 0.5;
+          animation: bloom 1s ease-out;
+        }
+
+        &:nth-child(3) {
+          animation: bloom 0.8s ease-out;
+        }
+      }
+    }
+  }
+
   &-card {
     padding: 1.4rem 1.4rem 0;
     width: 28.5rem;
@@ -630,6 +771,7 @@
     line-height: 1.2rem;
     position: absolute;
     height: fit-content;
+    opacity: 0;
 
     &:nth-child(1) {
       top: -10.3rem;
@@ -638,7 +780,6 @@
     }
 
     &:nth-child(2) {
-      opacity: 0.5;
       z-index: 1;
       top: -22.4rem;
       right: 2.9rem;
@@ -755,6 +896,10 @@
     }
   }
 
+  &__btns {
+    display: flex;
+  }
+
   &__row {
     position: relative;
     z-index: 10;
@@ -795,6 +940,15 @@
     justify-content: space-between;
     height: 38.4rem;
     box-sizing: border-box;
+    transition: all .3s ease;
+
+    &:hover, &:active, &:focus {
+      transform: scale(1.05);
+
+      &:before {
+        animation: gradient 1s infinite linear;
+      }
+    }
   }
 
   &__subtitle {
@@ -852,7 +1006,7 @@
     position: absolute;
     bottom: 0;
     left: 13.8rem;
-    animation: spin 3s infinite linear;
+    animation: spin-2 3s infinite linear;
     width: 6rem;
     height: 6rem;
     border-radius: 50%;
@@ -881,6 +1035,19 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+    transition: all .5s ease;
+    position: relative;
+    z-index: 1;
+
+    &:hover, &:active, &:focus {
+      z-index: 2;
+      transform: scale(1.08);
+      box-shadow: 1px 1px 3px 1px rgb(0 0 0 / 19%), 0 5px 53px 0 rgba(117, 44, 255, 0.4);
+
+      &:before {
+        background: var(--c, linear-gradient(0deg, rgba(117, 44, 255, 0.4) -1.02%, rgba(148, 92, 255, 0.4) 100%));
+      }
+    }
   }
 
   &__head {
@@ -958,20 +1125,22 @@
 
 @media only screen and (max-width: $medium-tablet) {
   .main {
-    height: fit-content;
-    background: transparent;
+    padding: 5.8rem 0 0;
     display: flex;
     flex-direction: column-reverse;
 
+    &__video {
+      position: relative;
+      margin-top: -7rem;
+    }
+
     &__content {
       border-top: 1px solid $white;
-      margin-top: 5.8rem;
       padding: 5rem 0 3rem;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      position: relative;
     }
 
     &__btn {
@@ -1142,6 +1311,12 @@
 
       &:nth-child(2) {
         grid-row-end: 4;
+      }
+    }
+
+    &__card {
+      &:hover, &:active, &:focus {
+        transform: scale(1.04);
       }
     }
   }
@@ -1455,6 +1630,7 @@
     &__card {
       padding: 5rem 3rem 8.6rem;
     }
+
     &__overlay {
       display: none;
     }

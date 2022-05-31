@@ -82,7 +82,11 @@ html {
   background: $black;
   box-sizing: border-box;
   font-size: 100vw  / (1920/10);
-  overflow-y: auto;
+  overflow: hidden;
+
+  &.overflow {
+    overflow-y: auto;
+  }
 }
 
 
@@ -98,10 +102,6 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   position: relative;
-
-  &.overflow {
-    overflow: hidden;
-  }
 }
 
 .container {
@@ -184,10 +184,23 @@ button, .link {
   }
 }
 
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: $black;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+}
+
 .video {
   position: relative;
   z-index: 1;
   padding-bottom: 56.25%;
+  margin: auto 0;
 
   &__media {
     width: 100%;
@@ -213,16 +226,19 @@ button, .link {
     &_bottom {
       bottom: 0;
     }
+
     @media only screen and (max-width: $medium-tablet) {
-      height: 1.5rem;
+      height: 14rem;
       &_top {
         display: block;
         top: -1px;
         transform: rotate(180deg);
+        background: linear-gradient(1800deg, #1B1B1B 64.51%, rgba(27, 27, 27, 0) 83.39%);
       }
 
       &_bottom {
         bottom: -1px;
+        background: linear-gradient(0deg, #1B1B1B 0%, rgba(27, 27, 27, 0) 100%);
       }
     }
   }
@@ -295,6 +311,12 @@ h3 {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: #211E44;
+      border: 0.5px solid #7838EF;
+    }
 
     &_next {
       margin-left: 1rem;
