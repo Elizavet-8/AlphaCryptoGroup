@@ -65,35 +65,6 @@
   }
 }
 
-
-.image-grid {
-  font-size: 0;
-  line-height: 0em;
-  padding: 200px 0 1000px;
-
-  .img-wrapper {
-    background: lightgray;
-    position: relative;
-    display: inline-block;
-    width: 23.33%;
-    height: 400px;
-    margin: 0 5% 50px;
-    overflow: hidden;
-    //transition: transform 200ms;
-
-    .img {
-      position: absolute;
-      top: -10%;
-      left: 0;
-      width: 100%;
-      height: 130%;
-      background-position: center;
-      background-size: cover;
-    }
-  }
-}
-
-
 .offers {
   padding: 15.5rem 0 22.2rem;
   position: relative;
@@ -120,9 +91,24 @@
     margin-left: auto;
   }
 
+  &__title {
+    transform: translateY(100%);
+    opacity: 0;
+
+    &.active {
+      animation: slideUp .5s both;
+    }
+  }
+
   &__text {
     max-width: 52rem;
     margin-top: 4rem;
+    transform: translateY(50%);
+    opacity: 0;
+
+    &.active {
+      animation: slideUp .8s both;
+    }
   }
 
   &__img {
@@ -553,6 +539,12 @@
     margin: 0 auto;
     box-shadow: $box-shadow;
     border-radius: 2rem;
+    transform: translateY(30%);
+    opacity: 0;
+
+    &.active {
+      animation: slideUp .8s both;
+    }
 
     &_mobile {
       display: none;
@@ -563,9 +555,11 @@
     margin: 6rem 0 3rem;
     letter-spacing: -1.56316px;
     position: relative;
+
     span {
       opacity: 0;
     }
+
     &.active {
       span {
         opacity: 1;
@@ -581,12 +575,11 @@
     letter-spacing: -0.625263px;
     max-width: 99.6rem;
     margin: auto;
+    transform: translateY(50%);
+    opacity: 0;
 
     &.active {
-      .char {
-        opacity: 1;
-        animation: an 1s ease-out 1 both;
-      }
+      animation: slideUp .8s both;
     }
   }
 }
@@ -594,9 +587,24 @@
 .roadmap {
   padding: 17rem 0 34.8rem;
 
+  &__title {
+    transform: translateY(-100%);
+    opacity: 0;
+
+    &.active {
+      animation: slideUp .8s both;
+    }
+  }
+
   &__slider {
     margin-top: 8rem;
     height: fit-content;
+    transform: translateY(30%);
+    opacity: 0;
+
+    &.active {
+      animation: slideUp .8s both;
+    }
   }
 
   &__slide {
@@ -663,9 +671,14 @@
     padding: 6rem 2rem 3.4rem;
     height: 100%;
 
+    &:before {
+      transition: .3s ease;
+    }
+
     &:hover, &:active, &:focus {
       &:before {
-        animation: gradient 1s infinite linear;
+        background-size: 200% 200%;
+        background-position: 0% 100%;
       }
     }
   }
@@ -739,18 +752,53 @@
     position: relative;
   }
 
-  &__caption {
-    margin: 1rem 0 3rem;
-  }
-
   &__texts {
     max-width: 48.8rem;
     position: relative;
     z-index: 5;
+
+    &.active {
+      .starter {
+        &__title {
+          animation: slideUp .6s both;
+        }
+
+        &__caption {
+          animation: slideUp 1s both;
+        }
+
+        &__text {
+          animation: slideUp 1.4s both;
+        }
+
+        &__btn {
+          animation: slideUp 2s both;
+        }
+      }
+    }
+
+  }
+
+  &__title {
+    transform: translateY(100%);
+    opacity: 0.5;
+  }
+
+  &__caption {
+    margin: 1rem 0 3rem;
+    transform: translateY(100%);
+    opacity: 0.5;
+  }
+
+  &__text {
+    transform: translateY(100%);
+    opacity: 0.5;
   }
 
   &__btn {
     margin-top: 4rem;
+    transform: translateY(100%);
+    opacity: 0.5;
   }
 
   &-cards {
@@ -910,6 +958,12 @@
 
   &__btns {
     display: flex;
+    transform: translateY(50%);
+    opacity: 0.5;
+
+    &.active {
+      animation: slideUp .8s both;
+    }
   }
 
   &__row {
@@ -923,6 +977,12 @@
   &__title {
     max-width: 88rem;
     margin-right: 2rem;
+    transform: translateY(100%);
+    opacity: 0;
+
+    &.active {
+      animation: slideUp 1s both;
+    }
 
     &_pink {
       color: $pink-2;
@@ -932,6 +992,12 @@
   &__caption {
     letter-spacing: -0.625263px;
     margin: 3rem 0 8.7rem;
+    transform: translateY(100%);
+    opacity: 0;
+
+    &.active {
+      animation: slideUp 1.5s both;
+    }
   }
 
   &__svg {
@@ -941,8 +1007,23 @@
     display: inherit;
   }
 
+  &__btn {
+    transform: translateY(300%);
+    opacity: 0;
+
+    &.active {
+      animation: slideUp 2s both;
+    }
+  }
+
   &__slider {
     overflow: inherit;
+    transform: translateY(10%);
+    opacity: 0.5;
+
+    &.active {
+      animation: slideUp .8s both;
+    }
   }
 
   &__card {
@@ -1028,11 +1109,25 @@
     z-index: 1;
   }
 
+  &__title {
+    opacity: 0.5;
+    transform: translateY(-50%);
+    &.active {
+      animation: slideUp .8s both;
+    }
+  }
+
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     margin: 6rem -1rem;
+    transform: translateY(3rem);
+    opacity: 0.5;
+
+    &.active {
+      animation: slideUp .8s both;
+    }
   }
 
   &__column {
@@ -1132,6 +1227,12 @@
     font-size: 1.5rem;
     line-height: 1.8rem;
     color: $gray-light;
+    transform: translateY(3rem);
+    opacity: 0;
+
+    &.active {
+      animation: slideUp .8s both;
+    }
   }
 }
 
