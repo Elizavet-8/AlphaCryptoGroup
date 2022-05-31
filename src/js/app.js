@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
     //лоудер
-    jQuery($ => {
-        $(window).on('load', () => {
-            setTimeout(() => {
-                $('#preloader').fadeOut('slow', function () {
-                    $(this).remove();
-                });
-                $('html').toggleClass('overflow');
-            }, 3500);
-        });
-    });
+    // jQuery($ => {
+    //     $(window).on('load', () => {
+    //         setTimeout(() => {
+    //             $('#preloader').fadeOut('slow', function () {
+    //                 $(this).remove();
+    //             });
+    //             $('html').toggleClass('overflow');
+    //         }, 3500);
+    //     });
+    // });
 
 
     //бургер меню
@@ -124,21 +124,116 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    const animOne = document.querySelectorAll('.anim-one')
+
+    if (animOne.length > 0) {
+        window.addEventListener('scroll', animOnScroll)
+
+        function animOnScroll() {
+            for (let index = 0; index < animOne.length; index++) {
+                const animItem = animOne[index];
+                const animItemHeight = animItem.offsetHeight;
+                const animItemOffset = offset(animItem).top;
+                const animStart = 4;
+
+                let animItemPoint = window.innerHeight - animItemHeight / animStart;
+                if (animItemHeight > window.innerHeight) {
+                    animItemPoint = window.innerHeight - window.innerHeight / animStart;
+                }
+
+                if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+                    animItem.classList.add('active');
+                }
+
+            }
+        }
+
+        function offset(el) {
+            const rect = el.getBoundingClientRect(),
+                scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+                scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            return {top: rect.top + scrollTop, left: rect.left + scrollLeft}
+
+        }
+    }
+
     //анимация текста
-    var text = document.getElementById('text')
+    var text = document.getElementById('text');
     var newDom = '';
     var animationDelay = 6;
 
-    for (let i = 0; i < text.innerText.length; i++) {
-        newDom += '<span class="char">' + (text.innerText[i] == ' ' ? '&nbsp;' : text.innerText[i]) + '</span>';
+    for(let i = 0; i < text.innerText.length; i++)
+    {
+        newDom += '<span class="char">' + (text.innerText[i] == ' ' ? '&nbsp;' : text.innerText[i])+ '</span>';
     }
 
     text.innerHTML = newDom;
     var length = text.children.length;
 
-    for (let i = 0; i < length; i++) {
+    for(let i = 0; i < length; i++)
+    {
         text.children[i].style['animation-delay'] = animationDelay * i + 'ms';
     }
+
+    window.onload = function() {
+        animateSequence();
+        animateRandom();
+    };
+
+    function animateSequence() {
+        var a = document.getElementsByClassName('sequence');
+        for (var i = 0; i < a.length; i++) {
+            var $this = a[i];
+            var letter = $this.innerHTML;
+            letter = letter.trim();
+            var str = '';
+            var delay = 10;
+            for (l = 0; l < letter.length; l++) {
+                if (letter[l] != ' ') {
+                    str += '<span style="animation-delay:' + delay + 'ms; -moz-animation-delay:' + delay + 'ms; -webkit-animation-delay:' + delay + 'ms; ">' + letter[l] + '</span>';
+                    delay += 30;
+                } else
+                    str += letter[l];
+            }
+            $this.innerHTML = str;
+        }
+    }
+
+    // function animateRandom() {
+    //     var a = document.getElementsByClassName('random');
+    //     for (var i = 0; i < a.length; i++) {
+    //         var $this = a[i];
+    //         var letter = $this.innerHTML;
+    //         letter = letter.trim();
+    //         var delay = 70;
+    //         var delayArray = new Array;
+    //         var randLetter = new Array;
+    //         for (j = 0; j < letter.length; j++) {
+    //             while (1) {
+    //                 var random = getRandomInt(0, (letter.length - 1));
+    //                 if (delayArray.indexOf(random) == -1)
+    //                     break;
+    //             }
+    //             delayArray[j] = random;
+    //         }
+    //         for (l = 0; l < delayArray.length; l++) {
+    //             var str = '';
+    //             var index = delayArray[l];
+    //             if (letter[index] != ' ') {
+    //                 str = '<span style="animation-delay:' + delay + 'ms; -moz-animation-delay:' + delay + 'ms; -webkit-animation-delay:' + delay + 'ms; ">' + letter[index] + '</span>';
+    //                 randLetter[index] = str;
+    //             } else
+    //                 randLetter[index] = letter[index];
+    //             delay += 80;
+    //         }
+    //         randLetter = randLetter.join("");
+    //         $this.innerHTML = randLetter;
+    //     }
+    // }
+    //
+    // function getRandomInt(min, max) {
+    //     return Math.floor(Math.random() * (max - min + 1)) + min;
+    // }
 
     //анимация карточки
     $.fn.isOnScreen = function () {

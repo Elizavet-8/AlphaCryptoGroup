@@ -82,11 +82,11 @@ html {
   background: $black;
   box-sizing: border-box;
   font-size: 100vw  / (1920/10);
-  overflow: hidden;
-
-  &.overflow {
-    overflow-y: auto;
-  }
+  //overflow: hidden;
+  //
+  //&.overflow {
+  //  overflow-y: auto;
+  //}
 }
 
 
@@ -148,6 +148,17 @@ main {
 
 .text-center {
   text-align: center;
+}
+
+.letter {
+  display: inline-block;
+  transform-origin: 0 0;
+  //opacity: 0;
+}
+
+.char{
+  opacity: 0;
+  display: inline-block;
 }
 
 .background-text {

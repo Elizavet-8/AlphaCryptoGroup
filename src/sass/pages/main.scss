@@ -65,6 +65,7 @@
   }
 }
 
+
 .image-grid {
   font-size: 0;
   line-height: 0em;
@@ -91,6 +92,7 @@
     }
   }
 }
+
 
 .offers {
   padding: 15.5rem 0 22.2rem;
@@ -560,14 +562,17 @@
   &__title {
     margin: 6rem 0 3rem;
     letter-spacing: -1.56316px;
-
-    .char {
-      display: inline-block;
+    position: relative;
+    span {
+      opacity: 0;
     }
-
     &.active {
-      .char {
-        animation: ani2 .8s forwards;
+      span {
+        opacity: 1;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        animation-name: leRotateYZoomIn;
+        display: inline-block;
       }
     }
   }
@@ -576,6 +581,13 @@
     letter-spacing: -0.625263px;
     max-width: 99.6rem;
     margin: auto;
+
+    &.active {
+      .char {
+        opacity: 1;
+        animation: an 1s ease-out 1 both;
+      }
+    }
   }
 }
 
