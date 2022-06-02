@@ -552,7 +552,7 @@
   }
 
   &__title {
-    margin: 6rem 0 3rem;
+    margin: 6rem auto 3rem;
     letter-spacing: -1.56316px;
     position: relative;
 
@@ -1112,6 +1112,7 @@
   &__title {
     opacity: 0.5;
     transform: translateY(-50%);
+
     &.active {
       animation: slideUp .8s both;
     }
@@ -1341,7 +1342,7 @@
       position: relative;
 
       &:nth-child(n) {
-        top: 0;
+        top: 0 !important;
         right: 0;
       }
 
@@ -1510,6 +1511,12 @@
 }
 
 @media only screen and (max-width: $large-mobile) {
+  .main {
+    &__video {
+      padding: 0;
+      height: 44rem;
+    }
+  }
   .offers {
     &__text {
       margin-top: 1.4rem;
@@ -1717,9 +1724,14 @@
       }
     }
   }
+  .more {
+    &__title {
+      max-width: 43rem;
+    }
 
-  .more__img_mobile {
-    height: 29.9rem;
+    &__img_mobile {
+      height: 29.9rem;
+    }
   }
 
   .roadmap {
@@ -1753,5 +1765,11 @@
     &__card {
       min-height: 0;
     }
+  }
+}
+
+@media only screen and (max-width: $medium-mobile) {
+  .more__title {
+    max-width: 31rem;
   }
 }

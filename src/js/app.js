@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var scrolled = $(window).scrollTop();
         $('#parallax-bg1').css('top',(800-(scrolled*.25))+'px');
         $('#parallax-bg2').css('top',(1580-(scrolled*.5))+'px');
-        $('#parallax-bg3').css('top',(2700-(scrolled*.75))+'px');
+        $('#parallax-bg3').css('top',(1255-(scrolled*.35))+'px');
     }
 
 
