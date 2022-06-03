@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
     //лоудер
-    // jQuery($ => {
-    //     $(window).on('load', () => {
-    //         setTimeout(() => {
-    //             $('#preloader').fadeOut('slow', function () {
-    //                 $(this).remove();
-    //             });
-    //             $('html').toggleClass('overflow');
-    //         }, 3500);
-    //     });
-    // });
+    jQuery($ => {
+        $(window).on('load', () => {
+            setTimeout(() => {
+                $('#preloader').fadeOut('slow', function () {
+                    $(this).remove();
+                });
+                $('html').toggleClass('overflow');
+            }, 3500);
+        });
+    });
 
 
     //бургер меню

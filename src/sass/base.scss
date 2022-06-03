@@ -82,11 +82,11 @@ html {
   background: $black;
   box-sizing: border-box;
   font-size: 100vw  / (1920/10);
-  //overflow: hidden;
-  //
-  //&.overflow {
-  //  overflow-y: auto;
-  //}
+  overflow-y: hidden;
+  overflow-x: hidden;
+  &.overflow {
+    overflow-y: auto;
+  }
 }
 
 
@@ -239,7 +239,7 @@ button, .link {
     }
 
     @media only screen and (max-width: $medium-tablet) {
-      height: 8rem;
+      height: 80rem;
       &_top {
         display: block;
         top: -1px;
