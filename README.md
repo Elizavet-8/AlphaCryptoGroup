@@ -4,5 +4,3 @@
 2. npx mix watch 
 3. Для лайтовой сборки npx mix 
 4. Для продакшена npx mix --production
-
-cp .env.development
