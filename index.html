@@ -21,7 +21,7 @@
 <div class="wrapper">
     <header class="header">
         <div class="header__row">
-            <a class="header-logo logo" href="index.html">
+            <a class="header-logo logo" href="#main">
                 <img class="header-logo__svg logo__svg" src="dist/images/logo.png" alt="logo">
                 <span class="header-logo__text background-text">
                     Alpha Crypto Group
@@ -31,22 +31,22 @@
                 <nav class="header-nav" id="nav">
                     <ul class="header-nav__list">
                         <li class="header-nav__item">
-                            <a class="header-nav__link" href="">
+                            <a class="header-nav__link" href="#main">
                                 О нас
                             </a>
                         </li>
                         <li class="header-nav__item">
-                            <a class="header-nav__link" href="">
+                            <a class="header-nav__link" href="#roadmap">
                                 Roadmap
                             </a>
                         </li>
                         <li class="header-nav__item">
-                            <a class="header-nav__link" href="">
+                            <a class="header-nav__link" href="#starter">
                                 Starter 🚀
                             </a>
                         </li>
                         <li class="header-nav__item header-nav__item_pink">
-                            <a class="header-nav__link" href="">
+                            <a class="header-nav__link" href="#advantages">
                                 PRO
                                 <img class="header-nav__svg" src="dist/images/icons/crystal.svg" alt="crystal">
                             </a>
@@ -89,6 +89,7 @@
             </div>
         </section>
         <section id="offers" class="offers">
+            <div id="showScroll"></div>
             <div class="offers__overlay"></div>
             <div class="container">
                 <div class="offers-knowledge offers__block">
@@ -546,16 +547,16 @@
             <div class="advantages__overlay advantages__overlay_left"></div>
             <div class="advantages__overlay advantages__overlay_right"></div>
             <div class="container">
-                <div class="advantages__row">
+                <div class="advantages__row anim-one">
                     <div class="advantages__texts">
-                        <h2 class="advantages__title anim-one">
+                        <h2 class="advantages__title">
                             Стань частью Alpha Crypto Group, оформив подписку
-                            <span class="advantages__title_pink anim-one">
+                            <span class="advantages__title_pink">
                             PRO
                             <img class="advantages__svg" src="dist/images/icons/crystal.svg" alt="crystal">
                         </span>
                         </h2>
-                        <div class="advantages__caption anim-one">
+                        <div class="advantages__caption">
                             Что входит в PRO?
                         </div>
                     </div>
@@ -750,8 +751,9 @@
 
 
 <div id="preloader" class="preloader">
-    <div class="video">
-        <video class="video__media" src="dist/video/video.mp4" autoplay muted loop></video>
+    <div class="video-preloader video">
+        <video class="video-preloader__media video__media" src="dist/video/video.mp4" autoplay playsinline muted loop></video>
+        <video class="video-preloader__media_mobile video-preloader__media video__media" src="dist/video/video-mobile.mp4" autoplay playsinline muted loop></video>
     </div>
 </div>
 
@@ -764,8 +766,6 @@
         integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
         crossorigin="anonymous"></script>
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-<script src="./dist/js/modal-box.min.js"></script>
-<script src="./dist/js/videotube.min.js "></script>
 <script src="./dist/js/app.js"></script>
 </body>
 </html>

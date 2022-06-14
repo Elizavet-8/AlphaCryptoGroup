@@ -585,7 +585,7 @@
 }
 
 .roadmap {
-  padding: 17rem 0 34.8rem;
+  padding: 17rem 0 0;
 
   &__title {
     transform: translateY(-100%);
@@ -747,6 +747,7 @@
 }
 
 .starter {
+  padding: 34.8rem 0 39.1rem;
 
   &__row {
     position: relative;
@@ -935,7 +936,7 @@
 }
 
 .advantages {
-  padding: 39.1rem 0 14rem;
+  padding: 0 0 14rem;
   position: relative;
 
   &__overlay {
@@ -959,7 +960,7 @@
   &__btns {
     display: flex;
     transform: translateY(50%);
-    opacity: 0.5;
+    opacity: 0;
 
     &.active {
       animation: slideUp .8s both;
@@ -972,6 +973,21 @@
     display: flex;
     justify-content: space-between;
 
+    &.active {
+      .advantages {
+        &__title {
+          animation: slideUp 1s both;
+        }
+
+        &__caption {
+          animation: slideUp 1.5s both;
+        }
+
+        &__btn {
+          animation: slideUp 2s both;
+        }
+      }
+    }
   }
 
   &__title {
@@ -979,10 +995,6 @@
     margin-right: 2rem;
     transform: translateY(100%);
     opacity: 0;
-
-    &.active {
-      animation: slideUp 1s both;
-    }
 
     &_pink {
       color: $pink-2;
@@ -994,10 +1006,6 @@
     margin: 3rem 0 8.7rem;
     transform: translateY(100%);
     opacity: 0;
-
-    &.active {
-      animation: slideUp 1.5s both;
-    }
   }
 
   &__svg {
@@ -1010,10 +1018,6 @@
   &__btn {
     transform: translateY(300%);
     opacity: 0;
-
-    &.active {
-      animation: slideUp 2s both;
-    }
   }
 
   &__slider {
@@ -1249,7 +1253,7 @@
     }
 
     &__content {
-      border-top: 1px solid $white;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
       padding: 5rem 0 3rem;
       text-align: center;
       display: flex;
@@ -1309,7 +1313,7 @@
   }
 
   .roadmap {
-    padding: 10rem 0;
+    padding: 10rem 0 0;
 
     &__card {
       max-height: 31rem
@@ -1317,6 +1321,8 @@
   }
 
   .starter {
+    padding: 10rem 0 11rem;
+
     &__caption {
       margin: 1.4rem 0 2rem;
     }
@@ -1328,6 +1334,8 @@
 
     &__btn {
       margin: 3rem auto 0;
+      animation: slideUp .8s linear;
+      opacity: 0;
     }
 
     &-cards {
@@ -1361,7 +1369,7 @@
   }
 
   .advantages {
-    padding: 11rem 0 3rem;
+    padding: 0 0 11rem;
 
     &__overlay {
       width: 10rem;
@@ -1379,6 +1387,7 @@
 
     &__btn {
       margin-bottom: 6rem;
+      transform: translateY(100%);
     }
 
     &__title {
@@ -1517,6 +1526,7 @@
       height: 44rem;
     }
   }
+
   .offers {
     &__text {
       margin-top: 1.4rem;
@@ -1724,6 +1734,7 @@
       }
     }
   }
+
   .more {
     &__title {
       max-width: 43rem;
@@ -1737,7 +1748,7 @@
   .roadmap {
     &__slider {
       overflow: inherit;
-      width: 28.5rem;
+      width: 32rem;
       margin-left: 0;
     }
   }
@@ -1771,5 +1782,11 @@
 @media only screen and (max-width: $medium-mobile) {
   .more__title {
     max-width: 31rem;
+  }
+}
+
+@media only screen and (max-width: $small-mobile) {
+  .more__title {
+    max-width: 30rem;
   }
 }

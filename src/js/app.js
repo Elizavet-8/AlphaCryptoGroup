@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     $(this).remove();
                 });
                 $('html').toggleClass('overflow');
-            }, 3500);
+            }, 3200);
         });
     });
 
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //слайдеры
     var roadmap__slider = new Swiper(".roadmap__slider", {
         slidesPerView: 1,
-        spaceBetween: 20,
+        spaceBetween: 10,
         autoHeight: true,
         navigation: {
             nextEl: ".roadmap__btn_next",
@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         breakpoints: {
             581: {
                 slidesPerView: 2,
+                spaceBetween: 20,
             },
             998: {
                 slidesPerView: 4,
@@ -234,16 +235,31 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    $(window).bind('scroll',function(e){
+    $(window).bind('scroll', function (e) {
         parallaxScroll();
     });
 
-    function parallaxScroll(){
+    function parallaxScroll() {
         var scrolled = $(window).scrollTop();
-        $('#parallax-bg1').css('top',(800-(scrolled*.25))+'px');
-        $('#parallax-bg2').css('top',(1580-(scrolled*.5))+'px');
-        $('#parallax-bg3').css('top',(1255-(scrolled*.35))+'px');
+        $('#parallax-bg1').css('top', (800 - (scrolled * .25)) + 'px');
+        $('#parallax-bg2').css('top', (1580 - (scrolled * .5)) + 'px');
+        $('#parallax-bg3').css('top', (1255 - (scrolled * .35)) + 'px');
     }
-
-
+    //
+    // let scrollHeight = Math.max(
+    //     document.body.scrollHeight, document.documentElement.scrollHeight,
+    //     document.body.offsetHeight, document.documentElement.offsetHeight,
+    //     document.body.clientHeight, document.documentElement.clientHeight
+    // );
+    // console.log(window.addEventListener.scroll)
+    //
+    // window.addEventListener('scroll', function() {
+    //     let scrl = pageYOffset;
+    // });
+    // let sc = pageYOffset;
+    // console.log(pageYOffset)
 })
+
+//карточка
+
+
