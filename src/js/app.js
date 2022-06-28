@@ -1,14 +1,89 @@
 document.addEventListener("DOMContentLoaded", function () {
-    //лоудер
-    jQuery($ => {
-        $(window).on('load', () => {
-            setTimeout(() => {
-                $('#preloader').fadeOut('slow', function () {
-                    $(this).remove();
-                });
-                $('html').toggleClass('overflow');
-            }, 3200);
-        });
+    //проверки
+    const MOBILE_PLAYLISTS = {
+        low: '/dist/video/mobile/low/video.m3u8',
+        medium: '/dist/video/mobile/medium/video.m3u8',
+        high: '/dist/video/mobile/high/video.m3u8',
+    }
+
+    const DESKTOP_PLAYLISTS = {
+        low: '/dist/video/desktop/low/video.m3u8',
+        medium: '/dist/video/desktop/medium/video.m3u8',
+        high: '/dist/video/desktop/high/video.m3u8',
+    }
+
+    let playlist = DESKTOP_PLAYLISTS;
+    if ($(window).width() < 998) {
+        playlist = MOBILE_PLAYLISTS;
+    }
+
+    //скорость интернета
+    var arrTimes = [];
+    var i = 0; // start
+    var timesToTest = 10;
+    var testImage = `/dist/images/icons/crystal.svg`;
+    var dummyImage = new Image();
+    var isConnectedFast
+    let speed
+
+    function testLatency(cb) {
+        var tStart = new Date().getTime();
+        if (i < timesToTest - 1) {
+            dummyImage.src = testImage + '?t=' + tStart;
+            dummyImage.onload = function () {
+                var tEnd = new Date().getTime();
+                var tTimeTook = tEnd - tStart;
+                arrTimes[i] = tTimeTook;
+                testLatency(cb);
+                i++;
+            };
+        } else {
+            var sum = arrTimes.reduce(function (a, b) {
+                return a + b;
+            });
+            speed = sum / arrTimes.length;
+            cb(speed);
+        }
+    }
+
+    testLatency(function (speed) {
+        let m3u8
+        if (speed < 120) {
+            m3u8 = playlist.high
+        } else if (speed <= 1500 && speed >= 120) {
+            m3u8 = playlist.medium
+        } else {
+            m3u8 = playlist.low
+        }
+
+
+        var video = document.getElementById('video');
+        if (Hls.isSupported()) {
+            var hls = new Hls({
+                debug: true,
+            });
+            hls.loadSource(m3u8);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+                video.muted = true;
+                video.play();
+                let preloader = document.getElementById('preloader');
+                preloader.style.display = "none";
+            });
+            hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                console.log('end!');
+                // let media = document.getElementById('media');
+                // media.style.display = "none";
+            });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = m3u8;
+            video.addEventListener('canplay', function () {
+                video.play();
+            });
+        }
+
+        // console.log("Time: " + speed + "ms" + " " + m3u8)
+
     });
 
 
@@ -245,19 +320,8 @@ document.addEventListener("DOMContentLoaded", function () {
         $('#parallax-bg2').css('top', (1580 - (scrolled * .5)) + 'px');
         $('#parallax-bg3').css('top', (1255 - (scrolled * .35)) + 'px');
     }
-    //
-    // let scrollHeight = Math.max(
-    //     document.body.scrollHeight, document.documentElement.scrollHeight,
-    //     document.body.offsetHeight, document.documentElement.offsetHeight,
-    //     document.body.clientHeight, document.documentElement.clientHeight
-    // );
-    // console.log(window.addEventListener.scroll)
-    //
-    // window.addEventListener('scroll', function() {
-    //     let scrl = pageYOffset;
-    // });
-    // let sc = pageYOffset;
-    // console.log(pageYOffset)
+
+
 })
 
 //карточка

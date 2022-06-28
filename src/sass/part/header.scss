@@ -5,7 +5,7 @@
   right: 0;
   font-size: 1.8rem;
   line-height: 2.1rem;
-  z-index: 999;
+  z-index: 99;
 
   &__wrapper {
     display: contents;
@@ -41,7 +41,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    z-index: 999;
+    z-index: 99;
 
     &__svg {
       width: 6rem;
