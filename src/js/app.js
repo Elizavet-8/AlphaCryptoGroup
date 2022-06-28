@@ -12,11 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
         high: '/dist/video/desktop/high/video.m3u8',
     }
 
-    let playlist = DESKTOP_PLAYLISTS;
-    if ($(window).width() < 998) {
+    let playlist;
+    if ($(window).width() < 999) {
         playlist = MOBILE_PLAYLISTS;
+    } else {
+        playlist = DESKTOP_PLAYLISTS
     }
-
+    console.log($(window).width())
     //скорость интернета
     var arrTimes = [];
     var i = 0; // start
@@ -70,11 +72,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 let preloader = document.getElementById('preloader');
                 preloader.style.display = "none";
             });
-            hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                console.log('end!');
-                // let media = document.getElementById('media');
-                // media.style.display = "none";
-            });
+            document.getElementById('video').addEventListener('ended', myHandler, false);
+
+            function myHandler(e) {
+                let media = document.getElementById('media');
+                media.style.display = "none";
+            }
         } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
             video.src = m3u8;
             video.addEventListener('canplay', function () {

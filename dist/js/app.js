@@ -25,12 +25,15 @@ document.addEventListener("DOMContentLoaded", function () {
     medium: '/dist/video/desktop/medium/video.m3u8',
     high: '/dist/video/desktop/high/video.m3u8'
   };
-  var playlist = DESKTOP_PLAYLISTS;
+  var playlist;
 
-  if ($(window).width() < 998) {
+  if ($(window).width() < 999) {
     playlist = MOBILE_PLAYLISTS;
-  } //скорость интернета
+  } else {
+    playlist = DESKTOP_PLAYLISTS;
+  }
 
+  console.log($(window).width()); //скорость интернета
 
   var arrTimes = [];
   var i = 0; // start
@@ -77,6 +80,11 @@ document.addEventListener("DOMContentLoaded", function () {
     var video = document.getElementById('video');
 
     if (Hls.isSupported()) {
+      var myHandler = function myHandler(e) {
+        var media = document.getElementById('media');
+        media.style.display = "none";
+      };
+
       var hls = new Hls({
         debug: true
       });
@@ -88,10 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var preloader = document.getElementById('preloader');
         preloader.style.display = "none";
       });
-      hls.on(Hls.Events.MANIFEST_PARSED, function () {
-        console.log('end!'); // let media = document.getElementById('media');
-        // media.style.display = "none";
-      });
+      document.getElementById('video').addEventListener('ended', myHandler, false);
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
       video.src = m3u8;
       video.addEventListener('canplay', function () {
