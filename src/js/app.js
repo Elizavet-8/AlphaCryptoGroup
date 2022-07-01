@@ -40,24 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         ease: "none",
         duration: 1,
-        // yPercent: 185,
         yPercent: 188,
     })
-
-    // const tl = gsap.timeline({
-    //     scrollTrigger: {
-    //         trigger: ".trigger",
-    //         start: "center bottom",
-    //         // end: "center top",
-    //         toggleClass: "active",
-    //         scrub: true,
-    //         // markers: true,
-    //         pin: ".pin",
-    //         end: "+=500"
-    //     }
-    // });
-    //
-    // tl.to(".box", {yPercent: 100, duration: 3})
 
 
     //видео - старт
@@ -110,45 +94,45 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //инициализация видео
-    // testLatency(function (speed) {
-    //     //проверка видео от скорости интернеты
-    //     let m3u8
-    //     if (speed < 120) {
-    //         m3u8 = playlist.high
-    //     } else if (speed <= 1500 && speed >= 120) {
-    //         m3u8 = playlist.medium
-    //     } else {
-    //         m3u8 = playlist.low
-    //     }
-    //
-    //
-    //     var video = document.getElementById('video');
-    //     if (Hls.isSupported()) {
-    //         var hls = new Hls({
-    //             debug: true,
-    //         });
-    //         hls.loadSource(m3u8);
-    //         hls.attachMedia(video);
-    //         // прелоудер перед загрузкой видео
-    //         hls.on(Hls.Events.MEDIA_ATTACHED, function () {
-    //             video.muted = true;
-    //             video.play();
-    //             let preloader = document.getElementById('preloader');
-    //             preloader.style.display = "none";
-    //         });
-    //         document.getElementById('video').addEventListener('ended', myHandler, false);
-    //         //убираем видео после проигрывания
-    //         function myHandler(e) {
-    //             let media = document.getElementById('media');
-    //             media.style.display = "none";
-    //         }
-    //     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    //         video.src = m3u8;
-    //         video.addEventListener('canplay', function () {
-    //             video.play();
-    //         });
-    //     }
-    // });
+    testLatency(function (speed) {
+        //проверка видео от скорости интернеты
+        let m3u8
+        if (speed < 120) {
+            m3u8 = playlist.high
+        } else if (speed <= 1500 && speed >= 120) {
+            m3u8 = playlist.medium
+        } else {
+            m3u8 = playlist.low
+        }
+
+
+        var video = document.getElementById('video');
+        if (Hls.isSupported()) {
+            var hls = new Hls({
+                debug: true,
+            });
+            hls.loadSource(m3u8);
+            hls.attachMedia(video);
+            // прелоудер перед загрузкой видео
+            hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+                video.muted = true;
+                video.play();
+                let preloader = document.getElementById('preloader');
+                preloader.style.display = "none";
+            });
+            document.getElementById('video').addEventListener('ended', myHandler, false);
+            //убираем видео после проигрывания
+            function myHandler(e) {
+                let media = document.getElementById('media');
+                media.style.display = "none";
+            }
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = m3u8;
+            video.addEventListener('canplay', function () {
+                video.play();
+            });
+        }
+    });
     //видео - конец
 
     //бургер меню
