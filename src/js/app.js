@@ -1,5 +1,67 @@
 document.addEventListener("DOMContentLoaded", function () {
-    //проверки
+
+
+    //карточка
+    // const knowledgeCardPosition = document.getElementsByClassName("offers-knowledge__card_big")[0].getBoundingClientRect();
+    // const marketCardPosition = document.getElementsByClassName("offers-market__card_big")[0].getBoundingClientRect();
+    // let centerCards = ((marketCardPosition.y - knowledgeCardPosition.y) / 2) + knowledgeCardPosition.y + knowledgeCardPosition.height;
+    // let centerCard = (marketCardPosition.y - knowledgeCardPosition.y) / 2;
+    // console.log(window.scrollY)
+    // console.log(centerCard)
+    //
+    // if (window.scrollY > centerCard) {
+    //     console.log("1")
+    // } else {
+    //     console.log("0")
+    // }
+    gsap.to(".offers-knowledge__card_big_js", {
+        scrollTrigger: {
+            trigger: ".offers__block",
+            start: "top top",
+            // toggleClass: "active",
+            toggleClass: {targets: ".offers__container_js", className: "offers__container_active"},
+            scrub: true,
+            pin: ".pin",
+            end: "+=500"
+        },
+        ease: "none",
+        duration: 2,
+        // yPercent: 185,
+        yPercent: 200,
+    })
+
+    gsap.to(".offers-market__card_big_js", {
+        scrollTrigger: {
+            trigger: ".offers__block",
+            start: "top top",
+            scrub: true,
+            pin: ".pin",
+            end: "+=500"
+        },
+        ease: "none",
+        duration: 1,
+        // yPercent: 185,
+        yPercent: 188,
+    })
+
+    // const tl = gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: ".trigger",
+    //         start: "center bottom",
+    //         // end: "center top",
+    //         toggleClass: "active",
+    //         scrub: true,
+    //         // markers: true,
+    //         pin: ".pin",
+    //         end: "+=500"
+    //     }
+    // });
+    //
+    // tl.to(".box", {yPercent: 100, duration: 3})
+
+
+    //видео - старт
+    //проверки на скорость интернета и размер экрана
     const MOBILE_PLAYLISTS = {
         low: '/dist/video/mobile/low/video.m3u8',
         medium: '/dist/video/mobile/medium/video.m3u8',
@@ -18,14 +80,13 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         playlist = DESKTOP_PLAYLISTS
     }
-    console.log($(window).width())
+
     //скорость интернета
     var arrTimes = [];
     var i = 0; // start
     var timesToTest = 10;
     var testImage = `/dist/images/icons/crystal.svg`;
     var dummyImage = new Image();
-    var isConnectedFast
     let speed
 
     function testLatency(cb) {
@@ -48,47 +109,47 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    testLatency(function (speed) {
-        let m3u8
-        if (speed < 120) {
-            m3u8 = playlist.high
-        } else if (speed <= 1500 && speed >= 120) {
-            m3u8 = playlist.medium
-        } else {
-            m3u8 = playlist.low
-        }
-
-
-        var video = document.getElementById('video');
-        if (Hls.isSupported()) {
-            var hls = new Hls({
-                debug: true,
-            });
-            hls.loadSource(m3u8);
-            hls.attachMedia(video);
-            hls.on(Hls.Events.MEDIA_ATTACHED, function () {
-                video.muted = true;
-                video.play();
-                let preloader = document.getElementById('preloader');
-                preloader.style.display = "none";
-            });
-            document.getElementById('video').addEventListener('ended', myHandler, false);
-
-            function myHandler(e) {
-                let media = document.getElementById('media');
-                media.style.display = "none";
-            }
-        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-            video.src = m3u8;
-            video.addEventListener('canplay', function () {
-                video.play();
-            });
-        }
-
-        // console.log("Time: " + speed + "ms" + " " + m3u8)
-
-    });
-
+    //инициализация видео
+    // testLatency(function (speed) {
+    //     //проверка видео от скорости интернеты
+    //     let m3u8
+    //     if (speed < 120) {
+    //         m3u8 = playlist.high
+    //     } else if (speed <= 1500 && speed >= 120) {
+    //         m3u8 = playlist.medium
+    //     } else {
+    //         m3u8 = playlist.low
+    //     }
+    //
+    //
+    //     var video = document.getElementById('video');
+    //     if (Hls.isSupported()) {
+    //         var hls = new Hls({
+    //             debug: true,
+    //         });
+    //         hls.loadSource(m3u8);
+    //         hls.attachMedia(video);
+    //         // прелоудер перед загрузкой видео
+    //         hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+    //             video.muted = true;
+    //             video.play();
+    //             let preloader = document.getElementById('preloader');
+    //             preloader.style.display = "none";
+    //         });
+    //         document.getElementById('video').addEventListener('ended', myHandler, false);
+    //         //убираем видео после проигрывания
+    //         function myHandler(e) {
+    //             let media = document.getElementById('media');
+    //             media.style.display = "none";
+    //         }
+    //     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    //         video.src = m3u8;
+    //         video.addEventListener('canplay', function () {
+    //             video.play();
+    //         });
+    //     }
+    // });
+    //видео - конец
 
     //бургер меню
     $('.header__burger, .overlay').click(function () {
@@ -166,8 +227,6 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".advantages__card").height(mh);
 
     //анимация
-
-
     const animItems = document.querySelectorAll('.anim')
 
     if (animItems.length > 0) {
@@ -259,40 +318,6 @@ document.addEventListener("DOMContentLoaded", function () {
             $this.innerHTML = str;
         }
     }
-
-    //анимация карточки
-    $.fn.isOnScreen = function () {
-        var element = this.get(0);
-        var bounds = element.getBoundingClientRect();
-        return bounds.top < window.innerHeight && bounds.bottom > 0;
-    }
-    $('.img-wrapper,.img').each(function () {
-        $(this).attr('data-offset', $(this).offset().top);
-    });
-    $(window).scroll(function () {
-        $('.img-wrapper,.img').each(function (i) {
-            var $obj = $(this);
-            var $window = $(window);
-            if ($obj.isOnScreen()) {
-                var scroll = $window.scrollTop();
-                var winHeight = $window.height();
-                var offsetTop = Number($obj.attr('data-offset'));
-                var lag = $obj.data('lag');
-                var max = $obj.data('max');
-                var pos = offsetTop - (offsetTop - (scroll * lag));
-                pos = Math.round(pos);
-                if (i == 0) {
-                    console.log(pos, offsetTop, scroll, winHeight);
-                }
-                var pos = (scroll + winHeight - offsetTop) * lag;
-
-                pos = (pos > max) ? max : pos;
-                $obj.css({
-                    'transform': 'translate3d(0,' + pos + 'px,0)'
-                });
-            }
-        });
-    });
 
     //паралакс
     const parallaxEls = document.querySelectorAll("[data-speed]");

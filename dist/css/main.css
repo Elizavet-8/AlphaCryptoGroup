@@ -587,6 +587,8 @@ h3 {
   border-radius: 2rem;
   position: relative;
   --b: 1.5px;
+  position: relative;
+  z-index: 2;
 }
 .card:before {
   content: "";
@@ -791,6 +793,554 @@ h3 {
 @keyframes preloader-box-bounce {
   to {
     transform: translateY(0);
+  }
+}
+.offers {
+  padding-bottom: 5rem;
+  position: relative;
+}
+.offers__container_active .offers__card_long, .offers__container_active .offers__card_small {
+  -webkit-animation: none;
+          animation: none;
+  opacity: 0;
+}
+.offers__block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 18rem 0 18rem 10rem;
+}
+.offers__block:last-child {
+  margin-bottom: 0;
+}
+.offers__block_border {
+  background: #fff;
+}
+.offers__texts {
+  max-width: 62rem;
+  margin-left: auto;
+}
+.offers__title {
+  transform: translateY(100%);
+  opacity: 0;
+}
+.offers__title.active {
+  -webkit-animation: slideUp 0.5s both;
+          animation: slideUp 0.5s both;
+}
+.offers__text {
+  max-width: 52rem;
+  margin-top: 4rem;
+  transform: translateY(50%);
+  opacity: 0;
+}
+.offers__text.active {
+  -webkit-animation: slideUp 0.8s both;
+          animation: slideUp 0.8s both;
+}
+.offers__img {
+  width: 20.5rem;
+  height: 21.5rem;
+  margin: 0 auto;
+}
+.offers__icon {
+  width: 8rem;
+  height: 8rem;
+  position: relative;
+}
+.offers__body {
+  position: relative;
+}
+.offers__circle {
+  position: absolute;
+  filter: blur(10px);
+  transform: rotate(-34.72deg);
+  border-radius: 50%;
+}
+.offers__circle_purple {
+  background: #6016FC;
+  -webkit-animation: spin-2 3s infinite linear;
+          animation: spin-2 3s infinite linear;
+  width: 3rem;
+  height: 3rem;
+}
+.offers__circle_pink {
+  background: linear-gradient(180deg, #FF81A6 0%, #FC165B 100%);
+  -webkit-animation: spin-2 4s infinite linear;
+          animation: spin-2 4s infinite linear;
+  width: 4.7rem;
+  height: 4.7rem;
+}
+.offers__circle_green {
+  width: 5.5rem;
+  height: 5.5rem;
+  background: linear-gradient(180deg, #66FFA3 0%, #009C3E 100%);
+  -webkit-animation: spin-2 5s infinite linear;
+          animation: spin-2 5s infinite linear;
+}
+.offers__circle-blurred {
+  filter: blur(18px);
+  height: 6rem;
+  width: 7.9rem;
+  position: absolute;
+  z-index: -1;
+  -webkit-animation: spin-8 4s infinite linear;
+          animation: spin-8 4s infinite linear;
+}
+.offers__circle-blurred_blue {
+  background: #0094FF;
+  -webkit-animation: spin-8 2.5s infinite linear;
+          animation: spin-8 2.5s infinite linear;
+}
+.offers__circle-blurred_yellow {
+  background: #FFB800;
+  -webkit-animation: spin-8 3s infinite linear;
+          animation: spin-8 3s infinite linear;
+}
+.offers__circle-blurred_purple {
+  background: #803AFF;
+}
+.offers__circle-blurred_pink {
+  background: #DB00FF;
+  -webkit-animation: spin-8 3.5s infinite linear;
+          animation: spin-8 3.5s infinite linear;
+}
+.offers__circle-blurred_blues {
+  background: #5B00FF;
+  -webkit-animation: spin-8 4.5s infinite linear;
+          animation: spin-8 4.5s infinite linear;
+}
+.offers__cards {
+  position: relative;
+}
+.offers__card_small {
+  width: 16.8rem;
+  height: 17rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 10;
+  -webkit-animation: bloom 0.8s ease-out;
+          animation: bloom 0.8s ease-out;
+  transition: all 0.25s ease-in;
+}
+.offers__card_big {
+  padding: 4.2rem 3.8rem 4rem;
+  width: 28.5rem;
+  height: 41rem;
+}
+.offers__card_long {
+  width: 19.8rem;
+  height: 7.4rem;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  -webkit-animation: bloom 0.8s ease-out;
+          animation: bloom 0.8s ease-out;
+  transition: all 0.25s ease-in;
+}
+.offers-knowledge__circle_pink {
+  top: -2.3rem;
+  right: 29rem;
+}
+.offers-knowledge__circle_purple {
+  left: -6.4rem;
+  bottom: 2rem;
+}
+.offers-knowledge__circle_green {
+  top: 17rem;
+  right: -9.3rem;
+}
+.offers-knowledge__subtitle {
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  margin: 3rem 0 3.5rem;
+}
+.offers-knowledge__item {
+  margin-bottom: 1.3rem;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  display: grid;
+  grid-template-columns: 1fr minmax(6.8rem, auto);
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.offers-knowledge__item:last-child {
+  margin-bottom: 0;
+}
+.offers-knowledge__text {
+  padding-left: 2.2rem;
+}
+.offers-knowledge__line {
+  border-radius: 99.9rem;
+  height: 0.5rem;
+  width: 100%;
+}
+.offers-knowledge__line_purple {
+  background: linear-gradient(86.58deg, #7329FF 2.95%, #8C49FF 95.21%);
+  max-width: 11.2rem;
+}
+.offers-knowledge__line_pink {
+  background: linear-gradient(86.58deg, #297FFF 2.95%, #49A8FF 95.21%);
+}
+.offers-knowledge-bitcoin {
+  top: -8.7rem;
+  right: -7.4rem;
+}
+.offers-knowledge-bitcoin__circle-blurred_blue {
+  left: -0.9rem;
+  top: 0.7rem;
+}
+.offers-knowledge-bitcoin__circle-blurred_yellow {
+  top: 2px;
+  left: 1px;
+}
+.offers-knowledge-bitcoin__circle-blurred_purple {
+  right: -0.9rem;
+  top: 0.7rem;
+}
+.offers-knowledge-bitcoin__block {
+  border: 0.5rem solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.offers-knowledge-bitcoin__icon {
+  height: 4.5rem;
+  width: 2.9rem;
+}
+.offers-knowledge-logo {
+  top: 10.9rem;
+  left: -9.9rem;
+}
+.offers-knowledge-logo__circle-blurred_blue {
+  left: -0.9rem;
+  top: -1rem;
+}
+.offers-knowledge-logo__circle-blurred_pink {
+  top: 0;
+  left: 1px;
+}
+.offers-knowledge-logo__circle-blurred_blues {
+  border-top: 1rem;
+  right: -0.7rem;
+}
+.offers-knowledge-book {
+  bottom: -4.8rem;
+  right: -13.3rem;
+}
+.offers-knowledge-book__icon {
+  height: 6.6rem;
+  width: 7.3rem;
+}
+.offers-knowledge-book__circle-blurred_blue {
+  left: -1.4rem;
+  top: 0.6rem;
+}
+.offers-knowledge-book__circle-blurred_yellow {
+  top: 3px;
+  left: 4px;
+}
+.offers-knowledge-book__circle-blurred_purple {
+  right: -1.1rem;
+  top: 0.6rem;
+}
+.offers-market__cards {
+  width: 28.5rem;
+  height: 41rem;
+}
+.offers-market__card_big_js {
+  position: absolute !important;
+  top: -77rem;
+}
+.offers-market__circle_pink {
+  top: 2.5rem;
+  right: 29rem;
+}
+.offers-market__circle_purple {
+  left: 2.6rem;
+  bottom: -5rem;
+}
+.offers-market__circle_green {
+  top: 25rem;
+  right: -3.5rem;
+}
+.offers-market__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  margin: 4.1rem 0 3.5rem;
+}
+.offers-market__item {
+  display: flex;
+  align-items: center;
+}
+.offers-market__item:after {
+  content: "";
+  height: 1.6rem;
+  width: 1px;
+  background: #4E6572;
+  margin: 0 1rem;
+}
+.offers-market__item:first-child {
+  color: #56CCF2;
+}
+.offers-market__item:last-child:after {
+  content: none;
+}
+.offers-market__card {
+  z-index: 1;
+}
+.offers-market__card_big {
+  z-index: 2;
+  position: relative;
+  background: linear-gradient(180deg, rgba(52, 58, 66, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%), rgba(54, 52, 62, 0.6);
+}
+.offers-market__subtitle {
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  color: #56CCF2;
+}
+.offers-market-telegram {
+  top: 4.3rem;
+  right: -9.6rem;
+}
+.offers-market-telegram__icon {
+  height: 6rem;
+  width: 7rem;
+}
+.offers-market-telegram__circle-blurred_blue {
+  top: 0;
+  left: -1.4rem;
+}
+.offers-market-telegram__circle-blurred_yellow {
+  top: 0.9rem;
+  left: 4px;
+}
+.offers-market-telegram__circle-blurred_purple {
+  top: 1px;
+  left: 0.6rem;
+}
+.offers-market-crystal {
+  top: 15.8rem;
+  left: -8.5rem;
+}
+.offers-market-crystal__icon {
+  height: 8.6rem;
+  width: 5.3rem;
+}
+.offers-market-crystal__circle-blurred_blue {
+  top: 1.7rem;
+  left: -2.2rem;
+}
+.offers-market-crystal__circle-blurred_yellow {
+  top: 0.7rem;
+  left: -1.2rem;
+}
+.offers-market-crystal__circle-blurred_purple {
+  top: 1.7rem;
+  right: -2.3rem;
+}
+.offers-market-graph {
+  bottom: -3rem;
+  right: -10.1rem;
+}
+.offers-market-graph__icon {
+  width: 100%;
+}
+.offers-market-graph__circle-blurred_blue {
+  left: 5.4rem;
+  top: -0.6rem;
+}
+.offers-market-graph__circle-blurred_pink {
+  top: 3px;
+  left: 6.4rem;
+}
+.offers-market-graph__circle-blurred_blues {
+  border-top: 0.6rem;
+  left: 7.4rem;
+}
+
+@media only screen and (max-width: 998px) {
+  .offers {
+    padding-bottom: 8rem;
+    padding-top: 10rem;
+  }
+  .offers__block {
+    margin-bottom: 13.3rem;
+    flex-direction: column;
+  }
+  .offers__cards {
+    margin: 0 0 6.5rem 0;
+  }
+  .offers__texts {
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .offers__text {
+    margin-top: 1.4rem;
+  }
+  .offers__img {
+    width: 12.3rem;
+    height: 12.9rem;
+  }
+  .offers__icon {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+  .offers__card_small {
+    width: 10.1rem;
+    height: 10.2rem;
+    border-radius: 1.2rem;
+  }
+  .offers__card_small:before {
+    border-radius: 1.2rem;
+  }
+  .offers__card_big {
+    padding: 2.5rem 2.2rem 2.7rem;
+    width: 17.1rem;
+    border-radius: 1.2rem;
+  }
+  .offers__card_big:before {
+    border-radius: 1.2rem;
+  }
+  .offers__card_long {
+    width: 11.9rem;
+    height: 4.5rem;
+    border-radius: 1.2rem;
+  }
+  .offers__card_long:before {
+    border-radius: 1.2rem;
+  }
+  .offers__circle_purple {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  .offers__circle_pink {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+  .offers__circle_green {
+    width: 3.3rem;
+    height: 3.3rem;
+  }
+  .offers__circle-blurred {
+    filter: blur(10px);
+    height: 3.6rem;
+    width: 4.7rem;
+  }
+  .offers-knowledge__circle_pink {
+    top: -1rem;
+    left: -5.5rem;
+  }
+  .offers-knowledge__circle_purple {
+    left: -4.8rem;
+    bottom: 0.8rem;
+  }
+  .offers-knowledge__circle_green {
+    top: 9rem;
+    right: -11rem;
+  }
+  .offers-knowledge__subtitle {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    margin: 1.8rem 0 1.7rem;
+  }
+  .offers-knowledge__item {
+    margin-bottom: 1.3rem;
+    font-size: 0.7rem;
+    line-height: 1rem;
+    grid-template-columns: 1fr minmax(4.1rem, auto);
+  }
+  .offers-knowledge__text {
+    padding-left: 1.3rem;
+  }
+  .offers-knowledge__line {
+    border-radius: 60rem;
+    height: 3px;
+  }
+  .offers-knowledge__line_purple {
+    max-width: 6.7rem;
+  }
+  .offers-knowledge-bitcoin {
+    top: -5.2rem;
+    right: -4.5rem;
+  }
+  .offers-knowledge-bitcoin__block {
+    border: 4px solid #fff;
+  }
+  .offers-knowledge-bitcoin__icon {
+    height: 2.7rem;
+    width: 1.7rem;
+  }
+  .offers-knowledge-logo {
+    top: 6.5rem;
+    left: -6rem;
+  }
+  .offers-knowledge-book {
+    bottom: -3.1rem;
+    right: -8rem;
+  }
+  .offers-knowledge-book__icon {
+    height: 4rem;
+    width: 4.4rem;
+  }
+  .offers-market__circle_pink {
+    top: 1rem;
+    left: -4.5rem;
+  }
+  .offers-market__circle_purple {
+    left: 1.6rem;
+    bottom: -2.5rem;
+  }
+  .offers-market__circle_green {
+    top: 14rem;
+    right: -2.5rem;
+  }
+  .offers-market__list {
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+    margin: 2.4rem 0 2rem;
+  }
+  .offers-market__item:after {
+    height: 0.9rem;
+    margin: 0 0.5rem;
+  }
+  .offers-market__subtitle {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+  }
+  .offers-market-telegram {
+    top: 2.5rem;
+    right: -5.8rem;
+  }
+  .offers-market-telegram__icon {
+    height: 3.6rem;
+    width: 4.2rem;
+  }
+  .offers-market-crystal {
+    top: 9.5rem;
+    left: -5.1rem;
+  }
+  .offers-market-crystal__icon {
+    height: 5.2rem;
+    width: 3.2rem;
+  }
+  .offers-market-graph {
+    bottom: -1.8rem;
+    right: -6.1rem;
   }
 }
 .header {
@@ -1045,367 +1595,6 @@ h3 {
 .main__text {
   color: #9092A6;
   max-width: 75rem;
-}
-
-.offers {
-  padding: 15.5rem 0 22.2rem;
-  position: relative;
-}
-.offers__block {
-  margin-bottom: 19.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.offers__block:last-child {
-  margin-bottom: 0;
-}
-.offers__block_border {
-  background: #fff;
-}
-.offers__texts {
-  max-width: 62rem;
-  margin-left: auto;
-}
-.offers__title {
-  transform: translateY(100%);
-  opacity: 0;
-}
-.offers__title.active {
-  -webkit-animation: slideUp 0.5s both;
-          animation: slideUp 0.5s both;
-}
-.offers__text {
-  max-width: 52rem;
-  margin-top: 4rem;
-  transform: translateY(50%);
-  opacity: 0;
-}
-.offers__text.active {
-  -webkit-animation: slideUp 0.8s both;
-          animation: slideUp 0.8s both;
-}
-.offers__img {
-  width: 20.5rem;
-  height: 21.5rem;
-  margin: 0 auto;
-}
-.offers__icon {
-  width: 8rem;
-  height: 8rem;
-  position: relative;
-}
-.offers__body {
-  position: relative;
-}
-.offers__circle {
-  position: absolute;
-  filter: blur(10px);
-  transform: rotate(-34.72deg);
-  border-radius: 50%;
-}
-.offers__circle_purple {
-  background: #6016FC;
-  -webkit-animation: spin-2 3s infinite linear;
-          animation: spin-2 3s infinite linear;
-  width: 3rem;
-  height: 3rem;
-}
-.offers__circle_pink {
-  background: linear-gradient(180deg, #FF81A6 0%, #FC165B 100%);
-  -webkit-animation: spin-2 4s infinite linear;
-          animation: spin-2 4s infinite linear;
-  width: 4.7rem;
-  height: 4.7rem;
-}
-.offers__circle_green {
-  width: 5.5rem;
-  height: 5.5rem;
-  background: linear-gradient(180deg, #66FFA3 0%, #009C3E 100%);
-  -webkit-animation: spin-2 5s infinite linear;
-          animation: spin-2 5s infinite linear;
-}
-.offers__circle-blurred {
-  filter: blur(18px);
-  height: 6rem;
-  width: 7.9rem;
-  position: absolute;
-  z-index: -1;
-  -webkit-animation: spin-8 4s infinite linear;
-          animation: spin-8 4s infinite linear;
-}
-.offers__circle-blurred_blue {
-  background: #0094FF;
-  -webkit-animation: spin-8 2.5s infinite linear;
-          animation: spin-8 2.5s infinite linear;
-}
-.offers__circle-blurred_yellow {
-  background: #FFB800;
-  -webkit-animation: spin-8 3s infinite linear;
-          animation: spin-8 3s infinite linear;
-}
-.offers__circle-blurred_purple {
-  background: #803AFF;
-}
-.offers__circle-blurred_pink {
-  background: #DB00FF;
-  -webkit-animation: spin-8 3.5s infinite linear;
-          animation: spin-8 3.5s infinite linear;
-}
-.offers__circle-blurred_blues {
-  background: #5B00FF;
-  -webkit-animation: spin-8 4.5s infinite linear;
-          animation: spin-8 4.5s infinite linear;
-}
-.offers__cards {
-  position: relative;
-  margin-left: 10rem;
-}
-.offers__cards.active .offers__card_small, .offers__cards.active .offers__card_long {
-  -webkit-animation: bloom 0.7s ease-out;
-          animation: bloom 0.7s ease-out;
-}
-.offers__card_small {
-  width: 16.8rem;
-  height: 17rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  z-index: 10;
-}
-.offers__card_big {
-  padding: 4.2rem 3.8rem 4rem;
-  width: 28.5rem;
-}
-.offers__card_long {
-  width: 19.8rem;
-  height: 7.4rem;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-  position: absolute;
-  z-index: 1;
-}
-.offers-knowledge__circle_pink {
-  top: -2.3rem;
-  left: -8rem;
-}
-.offers-knowledge__circle_purple {
-  left: -6.4rem;
-  bottom: 2rem;
-}
-.offers-knowledge__circle_green {
-  top: 17rem;
-  right: -9.3rem;
-}
-.offers-knowledge__subtitle {
-  font-weight: 600;
-  font-size: 1.6rem;
-  line-height: 2.1rem;
-  margin: 3rem 0 3.5rem;
-}
-.offers-knowledge__item {
-  margin-bottom: 1.3rem;
-  font-size: 1.2rem;
-  line-height: 1.6rem;
-  display: grid;
-  grid-template-columns: 1fr minmax(6.8rem, auto);
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-.offers-knowledge__item:last-child {
-  margin-bottom: 0;
-}
-.offers-knowledge__text {
-  padding-left: 2.2rem;
-}
-.offers-knowledge__line {
-  border-radius: 99.9rem;
-  height: 0.5rem;
-  width: 100%;
-}
-.offers-knowledge__line_purple {
-  background: linear-gradient(86.58deg, #7329FF 2.95%, #8C49FF 95.21%);
-  max-width: 11.2rem;
-}
-.offers-knowledge__line_pink {
-  background: linear-gradient(86.58deg, #297FFF 2.95%, #49A8FF 95.21%);
-}
-.offers-knowledge-bitcoin {
-  top: -8.7rem;
-  right: -7.4rem;
-}
-.offers-knowledge-bitcoin__circle-blurred_blue {
-  left: -0.9rem;
-  top: 0.7rem;
-}
-.offers-knowledge-bitcoin__circle-blurred_yellow {
-  top: 2px;
-  left: 1px;
-}
-.offers-knowledge-bitcoin__circle-blurred_purple {
-  right: -0.9rem;
-  top: 0.7rem;
-}
-.offers-knowledge-bitcoin__block {
-  border: 0.5rem solid #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.offers-knowledge-bitcoin__icon {
-  height: 4.5rem;
-  width: 2.9rem;
-}
-.offers-knowledge-logo {
-  top: 10.9rem;
-  left: -9.9rem;
-}
-.offers-knowledge-logo__circle-blurred_blue {
-  left: -0.9rem;
-  top: -1rem;
-}
-.offers-knowledge-logo__circle-blurred_pink {
-  top: 0;
-  left: 1px;
-}
-.offers-knowledge-logo__circle-blurred_blues {
-  border-top: 1rem;
-  right: -0.7rem;
-}
-.offers-knowledge-book {
-  bottom: -4.8rem;
-  right: -13.3rem;
-}
-.offers-knowledge-book__icon {
-  height: 6.6rem;
-  width: 7.3rem;
-}
-.offers-knowledge-book__circle-blurred_blue {
-  left: -1.4rem;
-  top: 0.6rem;
-}
-.offers-knowledge-book__circle-blurred_yellow {
-  top: 3px;
-  left: 4px;
-}
-.offers-knowledge-book__circle-blurred_purple {
-  right: -1.1rem;
-  top: 0.6rem;
-}
-.offers-market__circle_pink {
-  top: 2.5rem;
-  left: -7.5rem;
-}
-.offers-market__circle_purple {
-  left: 2.6rem;
-  bottom: -5rem;
-}
-.offers-market__circle_green {
-  top: 25rem;
-  right: -3.5rem;
-}
-.offers-market__list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.4rem;
-  line-height: 2.1rem;
-  margin: 4.1rem 0 3.5rem;
-}
-.offers-market__item {
-  display: flex;
-  align-items: center;
-}
-.offers-market__item:after {
-  content: "";
-  height: 1.6rem;
-  width: 1px;
-  background: #4E6572;
-  margin: 0 1rem;
-}
-.offers-market__item:first-child {
-  color: #56CCF2;
-}
-.offers-market__item:last-child:after {
-  content: none;
-}
-.offers-market__card {
-  z-index: 1;
-}
-.offers-market__card_big {
-  z-index: 2;
-  position: relative;
-  background: linear-gradient(180deg, rgba(52, 58, 66, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%), rgba(54, 52, 62, 0.6);
-}
-.offers-market__subtitle {
-  font-weight: 600;
-  font-size: 2.4rem;
-  line-height: 2.8rem;
-  color: #56CCF2;
-}
-.offers-market-telegram {
-  top: 4.3rem;
-  right: -9.6rem;
-}
-.offers-market-telegram__icon {
-  height: 6rem;
-  width: 7rem;
-}
-.offers-market-telegram__circle-blurred_blue {
-  top: 0;
-  left: -1.4rem;
-}
-.offers-market-telegram__circle-blurred_yellow {
-  top: 0.9rem;
-  left: 4px;
-}
-.offers-market-telegram__circle-blurred_purple {
-  top: 1px;
-  left: 0.6rem;
-}
-.offers-market-crystal {
-  top: 15.8rem;
-  left: -8.5rem;
-}
-.offers-market-crystal__icon {
-  height: 8.6rem;
-  width: 5.3rem;
-}
-.offers-market-crystal__circle-blurred_blue {
-  top: 1.7rem;
-  left: -2.2rem;
-}
-.offers-market-crystal__circle-blurred_yellow {
-  top: 0.7rem;
-  left: -1.2rem;
-}
-.offers-market-crystal__circle-blurred_purple {
-  top: 1.7rem;
-  right: -2.3rem;
-}
-.offers-market-graph {
-  bottom: -3rem;
-  right: -10.1rem;
-}
-.offers-market-graph__icon {
-  width: 100%;
-}
-.offers-market-graph__circle-blurred_blue {
-  left: 5.4rem;
-  top: -0.6rem;
-}
-.offers-market-graph__circle-blurred_pink {
-  top: 3px;
-  left: 6.4rem;
-}
-.offers-market-graph__circle-blurred_blues {
-  border-top: 0.6rem;
-  left: 7.4rem;
 }
 
 .more__img {
@@ -2041,21 +2230,6 @@ h3 {
     margin: 0 auto;
   }
 
-  .offers {
-    padding-bottom: 8rem;
-    padding-top: 10rem;
-  }
-  .offers__block {
-    margin-bottom: 13.3rem;
-    flex-direction: column;
-  }
-  .offers__cards {
-    margin: 0 0 6.5rem 0;
-  }
-  .offers__texts {
-    margin: 0 auto;
-  }
-
   .more__img {
     display: none;
     border-radius: 0;
@@ -2238,160 +2412,6 @@ h3 {
   .main__video {
     padding: 0;
     height: 44rem;
-  }
-
-  .offers__text {
-    margin-top: 1.4rem;
-  }
-  .offers__img {
-    width: 12.3rem;
-    height: 12.9rem;
-  }
-  .offers__icon {
-    width: 4.2rem;
-    height: 4.2rem;
-  }
-  .offers__card_small {
-    width: 10.1rem;
-    height: 10.2rem;
-    border-radius: 1.2rem;
-  }
-  .offers__card_small:before {
-    border-radius: 1.2rem;
-  }
-  .offers__card_big {
-    padding: 2.5rem 2.2rem 2.7rem;
-    width: 17.1rem;
-    border-radius: 1.2rem;
-  }
-  .offers__card_big:before {
-    border-radius: 1.2rem;
-  }
-  .offers__card_long {
-    width: 11.9rem;
-    height: 4.5rem;
-    border-radius: 1.2rem;
-  }
-  .offers__card_long:before {
-    border-radius: 1.2rem;
-  }
-  .offers__circle_purple {
-    width: 1.8rem;
-    height: 1.8rem;
-  }
-  .offers__circle_pink {
-    width: 2.8rem;
-    height: 2.8rem;
-  }
-  .offers__circle_green {
-    width: 3.3rem;
-    height: 3.3rem;
-  }
-  .offers__circle-blurred {
-    filter: blur(10px);
-    height: 3.6rem;
-    width: 4.7rem;
-  }
-  .offers-knowledge__circle_pink {
-    top: -1rem;
-    left: -5.5rem;
-  }
-  .offers-knowledge__circle_purple {
-    left: -4.8rem;
-    bottom: 0.8rem;
-  }
-  .offers-knowledge__circle_green {
-    top: 9rem;
-    right: -11rem;
-  }
-  .offers-knowledge__subtitle {
-    font-size: 1rem;
-    line-height: 1.3rem;
-    margin: 1.8rem 0 1.7rem;
-  }
-  .offers-knowledge__item {
-    margin-bottom: 1.3rem;
-    font-size: 0.7rem;
-    line-height: 1rem;
-    grid-template-columns: 1fr minmax(4.1rem, auto);
-  }
-  .offers-knowledge__text {
-    padding-left: 1.3rem;
-  }
-  .offers-knowledge__line {
-    border-radius: 60rem;
-    height: 3px;
-  }
-  .offers-knowledge__line_purple {
-    max-width: 6.7rem;
-  }
-  .offers-knowledge-bitcoin {
-    top: -5.2rem;
-    right: -4.5rem;
-  }
-  .offers-knowledge-bitcoin__block {
-    border: 4px solid #fff;
-  }
-  .offers-knowledge-bitcoin__icon {
-    height: 2.7rem;
-    width: 1.7rem;
-  }
-  .offers-knowledge-logo {
-    top: 6.5rem;
-    left: -6rem;
-  }
-  .offers-knowledge-book {
-    bottom: -3.1rem;
-    right: -8rem;
-  }
-  .offers-knowledge-book__icon {
-    height: 4rem;
-    width: 4.4rem;
-  }
-  .offers-market__circle_pink {
-    top: 1rem;
-    left: -4.5rem;
-  }
-  .offers-market__circle_purple {
-    left: 1.6rem;
-    bottom: -2.5rem;
-  }
-  .offers-market__circle_green {
-    top: 14rem;
-    right: -2.5rem;
-  }
-  .offers-market__list {
-    font-size: 0.8rem;
-    line-height: 1.3rem;
-    margin: 2.4rem 0 2rem;
-  }
-  .offers-market__item:after {
-    height: 0.9rem;
-    margin: 0 0.5rem;
-  }
-  .offers-market__subtitle {
-    font-size: 1.4rem;
-    line-height: 1.7rem;
-  }
-  .offers-market-telegram {
-    top: 2.5rem;
-    right: -5.8rem;
-  }
-  .offers-market-telegram__icon {
-    height: 3.6rem;
-    width: 4.2rem;
-  }
-  .offers-market-crystal {
-    top: 9.5rem;
-    left: -5.1rem;
-  }
-  .offers-market-crystal__icon {
-    height: 5.2rem;
-    width: 3.2rem;
-  }
-  .offers-market-graph {
-    bottom: -1.8rem;
-    right: -6.1rem;
   }
 
   .more__title {

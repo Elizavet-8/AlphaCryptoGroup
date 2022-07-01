@@ -88,16 +88,17 @@
                 </div>
             </div>
         </section>
+
         <section id="offers" class="offers">
             <div id="showScroll"></div>
             <div class="offers__overlay"></div>
-            <div class="container">
+            <div class="container offers__container offers__container_js">
                 <div class="offers-knowledge offers__block">
                     <div class="offers-knowledge__cards offers__cards anim-one">
                         <div class="offers__circle offers__circle_purple offers-knowledge__circle_purple"></div>
                         <div class="offers__circle offers__circle_pink offers-knowledge__circle_pink"></div>
                         <div class="offers__circle offers__circle_green offers-knowledge__circle_green"></div>
-                        <div class="offers-knowledge__card offers__card offers__card_big card">
+                        <div class="offers-knowledge__card offers-knowledge__card_big offers-knowledge__card_big_js offers__card offers__card_big card">
                             <img class="offers-knowledge__img offers__img" src="dist/images/human.png" alt="chart">
                             <h5 class="offers-knowledge__subtitle text-center">
                                 8,000 ETH
@@ -161,7 +162,7 @@
                         <div class="offers__circle offers__circle_purple offers-market__circle_purple"></div>
                         <div class="offers__circle offers__circle_pink offers-market__circle_pink"></div>
                         <div class="offers__circle offers__circle_green offers-market__circle_green"></div>
-                        <div class="offers-market__card offers-market__card_big offers__card offers__card_big card">
+                        <div class="offers-market__card offers-market__card_big offers-market__card_big_js offers__card offers__card_big card">
                             <img class="offers-market__img offers__img" src="dist/images/chart.png" alt="chart">
                             <ul class="offers-market__list">
                                 <li class="offers-market__item">
@@ -750,22 +751,27 @@
 </div>
 
 
-<div class="preloader__wrap" id="preloader">
-    <div class="preloader" aria-hidden="true">
-        <div class="preloader__sq"></div>
-        <div class="preloader__sq"></div>
-    </div>
-</div>
-<div id="media" class="media">
-    <div class="video-media video">
-        <video class="video-media__media video__media" id="video"></video>
-    </div>
-</div>
+<!--<div class="preloader__wrap" id="preloader">-->
+<!--    <div class="preloader" aria-hidden="true">-->
+<!--        <div class="preloader__sq"></div>-->
+<!--        <div class="preloader__sq"></div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div id="media" class="media">-->
+<!--    <div class="video-media video">-->
+<!--        <video class="video-media__media video__media" id="video"></video>-->
+<!--    </div>-->
+<!--</div>-->
 <script src="./dist/js/hls.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
         crossorigin="anonymous"></script>
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/Draggable.min.js"></script>
+
 <script src="./dist/js/app.js"></script>
 </body>
 </html>
