@@ -2,46 +2,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     //карточка
-    // const knowledgeCardPosition = document.getElementsByClassName("offers-knowledge__card_big")[0].getBoundingClientRect();
-    // const marketCardPosition = document.getElementsByClassName("offers-market__card_big")[0].getBoundingClientRect();
-    // let centerCards = ((marketCardPosition.y - knowledgeCardPosition.y) / 2) + knowledgeCardPosition.y + knowledgeCardPosition.height;
-    // let centerCard = (marketCardPosition.y - knowledgeCardPosition.y) / 2;
-    // console.log(window.scrollY)
-    // console.log(centerCard)
-    //
-    // if (window.scrollY > centerCard) {
-    //     console.log("1")
-    // } else {
-    //     console.log("0")
-    // }
-    gsap.to(".offers-knowledge__card_big_js", {
-        scrollTrigger: {
-            trigger: ".offers__block",
-            start: "top top",
-            // toggleClass: "active",
-            toggleClass: {targets: ".offers__container_js", className: "offers__container_active"},
-            scrub: true,
-            pin: ".pin",
-            end: "+=500"
-        },
-        ease: "none",
-        duration: 2,
-        // yPercent: 185,
-        yPercent: 200,
-    })
+    if ($(window).width() >= 998) {
+        gsap.to(".offers-knowledge__card_big_js", {
+            scrollTrigger: {
+                trigger: ".offers__block",
+                start: "top top",
+                // toggleClass: "active",
+                toggleClass: {targets: ".offers__container_js", className: "offers__container_active"},
+                scrub: true,
+                pin: ".pin",
+                end: "+=500"
+            },
+            ease: "none",
+            duration: 2,
+            // yPercent: 185,
+            yPercent: 200,
+        })
 
-    gsap.to(".offers-market__card_big_js", {
-        scrollTrigger: {
-            trigger: ".offers__block",
-            start: "top top",
-            scrub: true,
-            pin: ".pin",
-            end: "+=500"
-        },
-        ease: "none",
-        duration: 1,
-        yPercent: 188,
-    })
+        gsap.to(".offers-market__card_big_js", {
+            scrollTrigger: {
+                trigger: ".offers__block",
+                start: "top top",
+                scrub: true,
+                pin: ".pin",
+                end: "+=500"
+            },
+            ease: "none",
+            duration: 1,
+            yPercent: 188,
+        })
+    }
+
 
 
     //видео - старт

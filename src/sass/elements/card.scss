@@ -490,10 +490,35 @@
     &__block {
       margin-bottom: 13.3rem;
       flex-direction: column;
+      padding: 0;
+      overflow: visible;
     }
 
     &__cards {
       margin: 0 0 6.5rem 0;
+    }
+
+    &__card {
+      &_big {
+        transform: none !important;
+        height: auto;
+      }
+    }
+
+    &-market {
+      &__cards {
+        width: auto;
+        height: auto;
+      }
+
+      &__card {
+        &_big {
+          &_js {
+            position: relative !important;
+            top: 0;
+          }
+        }
+      }
     }
 
     &__texts {
@@ -516,6 +541,10 @@
     &__icon {
       width: 4.2rem;
       height: 4.2rem;
+    }
+
+    &__block {
+      margin-bottom: 5rem;
     }
 
     &__card {
