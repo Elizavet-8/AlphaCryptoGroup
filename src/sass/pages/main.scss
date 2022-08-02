@@ -781,6 +781,10 @@
     display: flex;
     flex-direction: column-reverse;
 
+    &__media {
+      min-height: 0;
+    }
+
     &__video {
       position: relative;
       margin-top: -7rem;

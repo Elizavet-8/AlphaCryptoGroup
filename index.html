@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="overflow">
 <head>
     <meta charset="utf-8">
     <!-- <base href="index.html"> -->
@@ -11,10 +11,7 @@
     <meta name="csrf-token" content="XYZ123">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link
-            rel="stylesheet"
-            href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="./dist/css/main.css">
 </head>
 <body>
@@ -750,27 +747,56 @@
 </div>
 
 
-<div class="preloader__wrap" id="preloader">
-    <div class="preloader" aria-hidden="true">
-        <div class="preloader__sq"></div>
-        <div class="preloader__sq"></div>
-    </div>
+<div class="preloader" id="preloader">
+    <div class="bitcoin"></div>
 </div>
 <div id="media" class="media">
     <div class="video-media video">
-        <video class="video-media__media video__media" id="video"></video>
+        <video id="video" class="video-media__media video__media video-js vjs-default-skin"
+               preload="none" crossorigin="true"
+               autoplay
+               muted
+               playsinline
+        >
+        </video>
     </div>
 </div>
-<script src="./dist/js/hls.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
         crossorigin="anonymous"></script>
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/Draggable.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script>
+<!--<script src='https://vjs.zencdn.net/7.8.4/video.js'></script>-->
+<!--<link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/alt/video-js-cdn.css" rel="stylesheet">-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/video.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/3.0.2/videojs-contrib-hls.js"></script>-->
+<script src="./dist/js/hls.js"></script>
+<!--<script src="https://cdn.plyr.io/1.8.2/plyr.js"></script>-->
+<!--<link href="https://vjs.zencdn.net/7.0.0/video-js.css" rel="stylesheet">-->
+<!--<script src="https://vjs.zencdn.net/7.0.0/video.min.js"></script>-->
+<!--<script src="https://unpkg.com/videojs-flash/dist/videojs-flash.js"></script>-->
+<!--<script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>-->
 
+<!--<script>-->
+<!--    var video = document.querySelector('#video');-->
+
+<!--    if (Hls.isSupported()) {-->
+<!--        var hls = new Hls();-->
+<!--        hls.loadSource('/dist/video/mobile/low/video.m3u8');-->
+<!--        hls.attachMedia(video);-->
+<!--        hls.on(Hls.Events.MANIFEST_PARSED,function() {-->
+<!--            video.play();-->
+<!--        });-->
+<!--    } else {-->
+<!--        video.src = '/dist/video/mobile/low/video.m3u8';-->
+<!--        video.addEventListener('canplay', function () {-->
+<!--            video.play();-->
+<!--        });-->
+<!--    }-->
+<!--</script>-->
 <script src="./dist/js/app.js"></script>
 </body>
 </html>

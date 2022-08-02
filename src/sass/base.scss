@@ -84,11 +84,10 @@ html {
   font-size: 100vw  / (1920/10);
   overflow-x: hidden;
   overflow-y: auto;
-  //overflow-y: hidden;
-  //
-  //&.overflow {
-  //  overflow-y: auto;
-  //}
+
+  &.overflow {
+    overflow-y: hidden;
+  }
 }
 
 
@@ -101,8 +100,8 @@ body {
   font-size: 2rem;
   line-height: 3rem;
   background-repeat: repeat;
-  overflow-y: auto;
   overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
 }
 
@@ -214,12 +213,15 @@ button, .link {
   z-index: 1;
   padding-bottom: 56.25%;
   margin: auto 0;
+
   &__media {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 0;
     left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
   }
 
   &__overlay {
@@ -265,7 +267,6 @@ button, .link {
       &__media {
         height: 100%;
         object-fit: cover;
-
       }
     }
   }
@@ -303,6 +304,7 @@ h3 {
   --b: 1.5px;
   position: relative;
   z-index: 2;
+
   &:before {
     content: "";
     position: absolute;

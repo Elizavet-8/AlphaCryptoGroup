@@ -1,4 +1,31 @@
+
+//убираем видео после проигрывания
+function myHandler(e) {
+    let media = document.getElementById('media');
+    media.style.display = "none";
+    media.remove();
+    el = document.querySelector('html');
+    el.classList.remove("overflow");
+     document.querySelector("html").removeClass('overflow')
+    $('html').removeClass('overflow');
+}
 document.addEventListener("DOMContentLoaded", function () {
+
+    //прелоудер
+    var $circles = $('.circle')
+    TweenMax.set($circles, {scale: 0});
+    TweenMax.staggerTo($circles.toArray(), 1, {
+        opacity: 1,
+        scale: 1,
+        ease: Power1.easeIn
+    }, 0.2)
+    TweenMax.staggerTo($circles.toArray(), 0.5, {
+        scale: 1.2,
+        boxShadow: '0 25px 25px rgba(0, 0, 0, 0.4)',
+        repeat: -1,
+        yoyo: true,
+        ease: Power1.easeOut
+    }, 0.2)
 
 
     //карточка
@@ -32,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
             yPercent: 188,
         })
     }
-
 
 
     //видео - старт
@@ -109,16 +135,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 video.muted = true;
                 video.play();
                 let preloader = document.getElementById('preloader');
-                preloader.style.display = "none";
+                preloader.remove();
             });
             document.getElementById('video').addEventListener('ended', myHandler, false);
-            //убираем видео после проигрывания
-            function myHandler(e) {
-                let media = document.getElementById('media');
-                media.style.display = "none";
-            }
+
         } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
             video.src = m3u8;
+            document.getElementById('video').addEventListener('ended', myHandler, false);
+            video.addEventListener('loadstart', function () {
+                let preloader = document.getElementById('preloader');
+                preloader.remove();
+            });
             video.addEventListener('canplay', function () {
                 video.play();
             });
@@ -129,11 +156,11 @@ document.addEventListener("DOMContentLoaded", function () {
     //бургер меню
     $('.header__burger, .overlay').click(function () {
         $('.header').toggleClass('show');
-        $('body').toggleClass('overflow');
+        $('html').toggleClass('overflow');
     });
     $("#nav").on("click", "a", function (event) {
         $('.header').removeClass('show');
-        $('body').removeClass('overflow');
+        $('html').removeClass('overflow');
     });
 
     //плавный скролл

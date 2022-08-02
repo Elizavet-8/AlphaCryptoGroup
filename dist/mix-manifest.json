@@ -1,6 +1,6 @@
 {
-    "/js/app.js": "/js/app.js?id=4ee8cb73f4c5cd4ec8e8ba6239a0c952",
-    "/css/main.css": "/css/main.css?id=98b0cbf604e99966b1df0d45c97a94a8",
+    "/js/app.js": "/js/app.js?id=58346ad813ed43ccbbb16e14b421c136",
+    "/css/main.css": "/css/main.css?id=87521904b37923903e74cdba6df77325",
     "/fonts/Roboto-Light.woff": "/fonts/Roboto-Light.woff?id=010f5612d2472e413f7547ec57db4dde",
     "/fonts/Roboto-Light.woff2": "/fonts/Roboto-Light.woff2?id=a0e4f9114d4addcb497a0f516bcc6a93",
     "/fonts/Roboto-Regular.woff": "/fonts/Roboto-Regular.woff?id=26b139910791cf40805cf8ee0feec8f1",
@@ -45,7 +45,5 @@
     "/images/avatars/avatar6.png": "/images/avatars/avatar6.png?id=5a92a3a2045b77ed2dfd71663392bd69",
     "/images/avatars/avatar7.png": "/images/avatars/avatar7.png?id=d8e2a999c67a6c12dbd780acee6d0916",
     "/images/avatars/avatar8.png": "/images/avatars/avatar8.png?id=482d39ee7b778a010f31c8bce3354863",
-    "/images/avatars/avatar9.png": "/images/avatars/avatar9.png?id=85e4044ccca8df243f1fc8e22ee306f8",
-    "/video/video-mobile.mp4": "/video/video-mobile.mp4?id=c249c656a49df4e971f11d34643875c4",
-    "/video/video.mp4": "/video/video.mp4?id=72f263b78165e61c310209340a96cead"
+    "/images/avatars/avatar9.png": "/images/avatars/avatar9.png?id=85e4044ccca8df243f1fc8e22ee306f8"
 }
